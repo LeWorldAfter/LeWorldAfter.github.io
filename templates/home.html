@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Welcome to Le World After">
+  <meta name="author" content="LWA group">
+
+  <title>Welcome to Le World After</title>
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+ 
+  <script type="text/javascript" src="resource/raphael.min.js"></script>
+  <script type="text/javascript" src="resource/raphael.icons.min.js"></script>
+  <script type="text/javascript" src="resource/wheelnav.min.js"></script>
+
+  <!-- TODO refactor this to it's own script and then to resource folder-->>
+  <script type="text/javascript">
+
+    window.onload = function () {
+      var piemenu = new wheelnav('piemenu');
+      piemenu.spreaderInTitle = icon.plus;
+      piemenu.spreaderOutTitle = icon.cross;
+      piemenu.spreaderRadius = piemenu.wheelRadius * 0.13;
+      piemenu.wheelRadius = piemenu.wheelRadius * 0.83;
+      piemenu.animatetime = 250;
+      piemenu.animateeffect = 'back-out';
+      piemenu.createWheel();
+
+    };
+
+  </script>
+
+  <!-- TODO refactor this to it's own script and then to resource folder-->>
+  <style>
+ 
+    #piemenu > svg { width: 100%; height: 100%; }
+    #piemenu { height: 400px; width: 400px; margin:auto; }
+    @media (max-width: 400px) { #piemenu { height: 300px; width: 300px; } }
+
+    [class|=wheelnav-piemenu-slice-basic] { fill: #497F4C; stroke: none; }
+    [class|=wheelnav-piemenu-slice-selected] { fill: #497F4C; stroke: none; }
+    [class|=wheelnav-piemenu-slice-hover] { fill: #497F4C;  stroke: none; fill-opacity: 0.77; cursor: pointer; }
+
+    [class|=wheelnav-piemenu-title-basic] { fill: #333; stroke: none; }
+    [class|=wheelnav-piemenu-title-selected] { fill: #fff; stroke: none; }
+    [class|=wheelnav-piemenu-title-hover] { fill: #222; stroke: none; cursor: pointer; }
+
+    .wheelnav-piemenu-spreader-in,
+    .wheelnav-piemenu-spreader-out { fill: #444; stroke: #444; stroke-width: 2; cursor: pointer; }
+    .wheelnav-piemenu-spreadertitle-in,
+    .wheelnav-piemenu-spreadertitle-out { fill: #eee; stroke: #444; cursor: pointer; }
+
+    .wheelnav-piemenu-marker { stroke: #444; stroke-width: 2; }
+  </style>
+
+<body>
+  <div id="wheelDiv"></div>
+  <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
+    data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
+    data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='40' data-wheelnav-cssmode
+    data-wheelnav-init>
+    <div data-wheelnav-navitemicon='check'  >Players</div>
+    <div data-wheelnav-navitemimg='http://pmg.softwaretailoring.net/img/pmg_favicon.png'>Map</div>
+    <div data-wheelnav-navitemicon='checkbox'  >Builds</div>
+    <div data-wheelnav-navitemicon='checked'  >Shopping</div>
+    <div data-wheelnav-navitemicon='star'  >Entertainment</div>
+    <div data-wheelnav-navitemicon='icons'  >Something</div>
+  </div>
+
+</body>
+
+
+</head>
