@@ -1,0 +1,56 @@
+nav {
+  $fontColor: #FFF;
+  $navbarBackgroundColor: #333;
+  $linkHoverBackgroundColor: #111;
+  $activeLinkBackgroundColor: #04AA6D;
+
+  color: $fontColor;
+  background-color: $navbarBackgroundColor;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0 1rem 0 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  
+    a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  
+      &:hover:not(.active) {
+        background-color: $linkHoverBackgroundColor;
+      }
+    }
+  }
+  
+  .active {
+    background-color: $activeLinkBackgroundColor;
+  }
+}
+
+body {
+  background: url("brick.webp");
+  background-repeat: repeat;
+
+  #content {
+    background-color: rgba(0,0,0,0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: #FFF;
+  }
+}

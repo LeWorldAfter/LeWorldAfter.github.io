@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Le World After</title>
+  <link rel="stylesheet" href="{{ get_url(path="navbar.css", trailing_slash=false) }}">
+</head>
+
+<body style="margin: 0;">
+  <!-- <section class="section"> -->
+  <!--   <div class="container"> -->
+    <nav>
+      <div class="navbar-lwa">
+        <h1>Le World After</h1>
+      </div>
+      <div class="navbar-links">
+    	  <ul>
+    	  	<li><a class="active" href="#">Home</a></li>
+    	  	<li><a href="#">About</a></li>
+    	  	<li><a href="#">Players</a></li>
+    	  	<li><a href="#">Server</a></li>
+    	  </ul>
+      </div>
+    </nav>
+    <div id="content">
+      {% block content %} {% endblock %}
+    </div>
+  <!--   </div> -->
+  <!-- </section> -->
+</body>
+
+</html>
