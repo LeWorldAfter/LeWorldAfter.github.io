@@ -31,6 +31,6 @@ jobs:
         env:
           PAGES_BRANCH: main
           BUILD_DIR: .
-          TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}
+          TOKEN: $GITHUB_ACTOR:${{ secrets.IO_PUSH_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY:  LeWorldAfter/LeWorldAfter.github.io 
