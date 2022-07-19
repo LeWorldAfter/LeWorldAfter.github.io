@@ -23,7 +23,7 @@ jobs:
       - name: 'adding write key'
         run: |
           eval `ssh-agent -s`
-          ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
+          ssh-add - <<< '${{ secrets.IO_PUSH_KEY }}'
       - name: 'checkout'
         uses: actions/checkout@v2
       - name: 'build and deploy'
