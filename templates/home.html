@@ -41,25 +41,42 @@
 
   <link rel="stylesheet" type="text/css" href="resource/piemenu.css" />
 
+  <style>
+    #wheelDiv {
+      position: relative;
+      z-index: 100;
+    }
+
+    #particles-js {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: -100;
+    }
+  </style>
+
 </head>
 
 <body>
-  
 
-    <div id="particles-js"></div>
-    <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
-      data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
-      data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='40' data-wheelnav-cssmode
-      data-wheelnav-init>
-      <div data-wheelnav-navitemicon='check'>Players</div>
-      <div data-wheelnav-navitemimg='http://pmg.softwaretailoring.net/img/pmg_favicon.png'>Map</div>
-      <div data-wheelnav-navitemicon='checkbox'>Builds</div>
-      <div data-wheelnav-navitemicon='checked'>Shopping</div>
-      <div data-wheelnav-navitemicon='star'>Entertainment</div>
-      <div data-wheelnav-navitemicon='icons'>Something</div>
-    </div>
+  <div id="particles-js" class="bg"></div>
 
- 
+
+  <div id="wheelDiv" class="fg"></div>
+  <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
+    data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
+    data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='40' data-wheelnav-cssmode
+    data-wheelnav-init>
+    <div data-wheelnav-navitemicon='check'>Players</div>
+    <div data-wheelnav-navitemimg='http://pmg.softwaretailoring.net/img/pmg_favicon.png'>Map</div>
+    <div data-wheelnav-navitemicon='checkbox'>Builds</div>
+    <div data-wheelnav-navitemicon='checked'>Shopping</div>
+    <div data-wheelnav-navitemicon='star'>Entertainment</div>
+    <div data-wheelnav-navitemicon='icons'>Something</div>
+  </div>
+
+
+
   <script src="resource/particles-js/particles.js"></script>
   <script src="resource/particles-js/app.js"></script>
 
