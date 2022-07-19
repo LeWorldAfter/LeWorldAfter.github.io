@@ -3,11 +3,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      issues: write
-      repository-projects: write
-      packages: write
+    permissions: write-all
     if: github.ref != 'refs/heads/main'
     steps:
       - name: 'checkout'
@@ -21,11 +17,7 @@ jobs:
           # BUILD_ONLY: true
   build_and_deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      issues: write
-      repository-projects: write
-      packages: write
+    permissions: write-all
     if: github.ref == 'refs/heads/main'
     steps:
       - name: 'checkout'
