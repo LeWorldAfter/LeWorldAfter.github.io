@@ -20,6 +20,10 @@ jobs:
     permissions: write-all
     if: github.ref == 'refs/heads/main'
     steps:
+      - name: 'adding write key'
+        run: |
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
       - name: 'checkout'
         uses: actions/checkout@v2
       - name: 'build and deploy'
