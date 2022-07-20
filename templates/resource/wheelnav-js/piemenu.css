@@ -6,7 +6,10 @@
  #piemenu {
      height: 400px;
      width: 400px;
-     margin: auto;
+     margin: -200px 0 0 -200px;
+     position: absolute;
+     top: 50%;
+     left: 50%;   
  }
 
  @media (max-width: 400px) {
