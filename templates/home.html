@@ -36,6 +36,7 @@
       piemenu.wheelRadius = piemenu.wheelRadius * 1;
       piemenu.animatetime = 250;
       piemenu.animateeffect = 'back-out';
+      piemenu.titleFont2 = "200 1px Impact, Charcoal, sans-serif";
       piemenu.createWheel();
 
     };
@@ -68,12 +69,14 @@
     data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
     data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='40' data-wheelnav-cssmode
     data-wheelnav-init>
-    <div data-wheelnav-navitemicon='check'></div>
+
+    <div data-wheelnav-navitemtext="Players"><a href="{{ get_url(path="@/players/_index.md") }}"></a></div>
     <div data-wheelnav-navitemimg='http://pmg.softwaretailoring.net/img/pmg_favicon.png'></div>
     <div data-wheelnav-navitemicon='checkbox'></div>
     <div data-wheelnav-navitemicon='checked'></div>
     <div data-wheelnav-navitemicon='star'></div>
     <div data-wheelnav-navitemicon='icons'></div>
+
   </div>
   <script src="resource/particles-js/particles.js"></script>
   <script src="resource/particles-js/app.js"></script>
