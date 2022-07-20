@@ -4,9 +4,18 @@
 <h1 class="title">
   {{ section.title }}
 </h1>
-<ul>
+
+<div class="d-flex flex-row flex-wrap justify-content-around align-items-center">
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.extra.name }}</a></li>
+    <div class="card text-bg-dark" style="width: 18rem;">
+      <img src="{{ get_url(path=page.extra.img) }}" class="card-img-top" alt="{{ page.extra.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ page.extra.name }}</h5>
+        <p class="card-text">descriptive text</p>
+        <a href="{{ page.permalink | safe }}" class="card-link">Read More</a>
+      </div>
+    </div>
   {% endfor %}
-</ul>
+</div>
+
 {% endblock content %}
