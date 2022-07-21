@@ -4,7 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% block styling %}
   <link rel="stylesheet" href="{{ get_url(path="navbar.css", trailing_slash=false) }}">
+  {% endblock %}
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <title>Le World After</title>
 </head>
@@ -24,7 +28,10 @@
       window.dispatchEvent(new Event('resize'));
     });
   </script>
-  <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top">
+
+  {% block navbar %}
+
+  <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Le World After</a>
       <button
@@ -55,8 +62,12 @@
     </div>
   </nav>
 
-  <div id="content" class="container">
-    {% block content %} {% endblock %}
+  {% endblock %}
+
+  {% block content %} 
+  
+  {% endblock %}
+
   </div>
 </body>
 

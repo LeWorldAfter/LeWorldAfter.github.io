@@ -2,18 +2,21 @@
 
 {% block content %}
 
-<h1 class="title">{{ page.extra.name }}s' Base</h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
+<div id="content" class="container"></div>
 
-<div class="row">
-  <div class="col-xs-12">
-    <img src="{{ get_url(path=page.extra.img) }}" class="border" alt="{{ page.extra.name }}">
+  <h1 class="title">{{ page.extra.name }}s' Base</h1>
+  <p class="subtitle"><strong>{{ page.date }}</strong></p>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="{{ get_url(path=page.extra.img) }}" class="border" alt="{{ page.extra.name }}">
+    </div>
+    <div class="col-xs-12 mt-4">
+    <h2>Base Details</h2>
+      {{ page.content | safe }}
+    </div>
   </div>
-  <div class="col-xs-12 mt-4">
-	<h2>Base Details</h2>
-    {{ page.content | safe }}
-  </div>
+
 </div>
-
 
 {% endblock content %}

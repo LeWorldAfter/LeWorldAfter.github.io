@@ -4,12 +4,13 @@ date = 2019-11-27
 
 [extra]
 name = "Mr_Patcher"
-img = "img/catwhat.webp"
+profile_pic = "img/catwhat.webp"
+
 +++
 
 Mr_Patcher is the 6th member of LWA. He joined on XX/XX/2018. His base is at X,X
 
-## Shops Owned
+<!-- ## Shops Owned
 - Dig Shop
 	- Dig jobs based on contracts
 - ACME
@@ -27,4 +28,4 @@ Mr_Patcher is the 6th member of LWA. He joined on XX/XX/2018. His base is at X,X
 - Creeper
 - Chorus Fruit
 - Tree
-- Charcoal
+- Charcoal -->
