@@ -1,9 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  {{ page.extra.name }}
-</h1>
+
+<h1 class="title">{{ page.extra.name }}</h1>
 <p class="subtitle"><strong>{{ page.date }}</strong></p>
-{{ page.content | safe }}
+
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    <img src="{{ get_url(path=page.extra.img) }}" class="border" alt="{{ page.extra.name }}">
+  </div>
+  <div class="col-xs-12 col-md-8">
+    quick facts<br>blab blah blah
+  </div>
+  <div class="col-xs-12 mt-4">
+    {{ page.content | safe }}
+  </div>
+</div>
+
+
 {% endblock content %}
