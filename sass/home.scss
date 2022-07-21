@@ -1,5 +1,6 @@
 body {
-    
+    display: flexbox;
+
     #wheelDiv {
         position: relative;
         z-index: 100;
@@ -18,4 +19,12 @@ body {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8aff95", endColorstr="#fbeb86", GradientType=1);
 
     }
+
+    #home_footer {
+        position: fixed;
+        padding: 10px 10px 10px 10px;
+        bottom: 0;
+        right: 0;
+    }
+
 }
