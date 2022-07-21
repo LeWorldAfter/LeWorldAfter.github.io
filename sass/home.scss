@@ -1,11 +1,5 @@
 body {
-    background: rgb(138, 255, 149);
-    background-image: -moz-linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
-    background-image: -webkit-linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
-    background-image: linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8aff95", endColorstr="#fbeb86", GradientType=1);
-
-
+    
     #wheelDiv {
         position: relative;
         z-index: 100;
@@ -17,5 +11,11 @@ body {
         width: 100%;
         position: fixed;
         z-index: -100;
+        background: rgb(138, 255, 149);
+        background-image: -moz-linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
+        background-image: -webkit-linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
+        background-image: linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8aff95", endColorstr="#fbeb86", GradientType=1);
+
     }
 }
