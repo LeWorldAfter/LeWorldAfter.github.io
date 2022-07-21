@@ -37,9 +37,8 @@
       piemenu.wheelRadius = piemenu.wheelRadius * 0.83;
       piemenu.animatetime = 250;
       piemenu.animateeffect = 'back-out';
+      piemenu.selectedNavItemIndex = null;
       piemenu.createWheel();
-      piemenu.navigateWheel(5);
-
     };
 
   </script>
@@ -53,7 +52,7 @@
   <div id="wheelDiv"></div>
   <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
     data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
-    data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='40' data-wheelnav-cssmode
+    data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='60' data-wheelnav-cssmode
     data-wheelnav-init>
 
     <div data-wheelnav-navitemtext="Players"><a href="{{get_url(path="@/players/_index.md")}}"></a></div>
