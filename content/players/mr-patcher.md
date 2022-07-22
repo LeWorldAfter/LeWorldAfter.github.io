@@ -4,6 +4,7 @@ date = 2019-11-27
 
 [extra]
 name = "Mr_Patcher"
+doj = "Somewhere around the birth of server"
 profile_pic = "img/catwhat.webp"
 
 bg_img_1 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-1.jpg"
