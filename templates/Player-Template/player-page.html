@@ -4,19 +4,22 @@
 <link rel="stylesheet" href="{{get_url(path='player.css', trailing_slash=false) }}"> 
 
 <style>
-    /* .bg-img-1 {
-        color: #777;
-        background-image: url('{{ get_url(path=page.extra.bg_img_1) }}');
-    } */
+   
+.img-slideshow{
+    animation: animate 16s ease-in-out infinite;
+}
 
-    /* .bg-img-2 {
+@keyframes animate{
+    0%,100%{
+        background-image: url("{{ get_url(path=page.extra.bg_img_1) }}");
+    }
+    33%{
         background-image: url("{{ get_url(path=page.extra.bg_img_2) }}");
-    } */
-
-    /* .bg-img-3 {
+    }
+    66%{
         background-image: url("{{ get_url(path=page.extra.bg_img_3) }}");
-    } */
-
+    }
+}
 
 </style>
 
@@ -32,37 +35,9 @@
 {% block content %}
 
 <div class="container-fluid p-0">
-    <div class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            {% if page.extra.bg_img_1 %}
-            <div class="carousel-item carousal-image bg-img-1 active" style="background-image: url('{{ get_url(path=page.extra.bg_img_1) }}')">
-                <!-- <img src="{{ get_url(path=page.extra.bg_img_1) }}" class="d-block w-100" alt="{{ page.extra.name }}"> -->
-            </div>
-            {% endif %}
-    
-            {% if page.extra.bg_img_2 %}
-            <div class="carousel-item carousal-image bg-img-2" style="background-image: url('{{ get_url(path=page.extra.bg_img_2) }}')">
-                <!-- <img src="{{ get_url(path=page.extra.bg_img_2) }}" class="d-block w-100" alt="{{ page.extra.name }}"> -->
-            </div>
-            {% endif %}
-    
-            {% if page.extra.bg_img_3 %}
-            <div class="carousel-item carousal-image bg-img-3" style="background-image: url('{{ get_url(path=page.extra.bg_img_3) }}')">
-                <!-- <img src="{{ get_url(path=page.extra.bg_img_3) }}" class="d-block w-100" alt="{{ page.extra.name }}"> -->
-            </div>
-            {% endif %}
-    
-            {% if page.extra.bg_img_4 %}
-            <div class="carousel-item carousal-image bg-img-4" style="background-image: url('{{ get_url(path=page.extra.bg_img_4) }}')">
-                <!-- <img src="{{ get_url(path=page.extra.bg_img_4) }}" class="d-block w-100" alt="{{ page.extra.name }}"> -->
-            </div>
-            {% endif %}
-    
-            {% if page.extra.bg_img_5 %}
-            <div class="carousel-item carousal-image bg-img-5" style="background-image: url('{{ get_url(path=page.extra.bg_img_5) }}')">
-                <!-- <img src="{{ get_url(path=page.extra.bg_img_5) }}" class="d-block w-100" alt="{{ page.extra.name }}"> -->
-            </div>
-            {% endif %}
+    <div class="container-fluid p-0 img-slideshow">
+        <div class="details">
+            <h1>Hello</h1>
         </div>
     </div>
 </div>
