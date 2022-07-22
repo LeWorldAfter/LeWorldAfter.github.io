@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content" class="container">
+
+  <h1 class="title">
+    {{ section.title }}
+  </h1>
+  
+  <div class="row row-cols-2 row-cols-md-4 g-2">
+    {% for page in section.pages %}
+    <div class="col-xs-6 col-md-3">
+      <div class="card text-bg-dark h-100">
+        <img src="{{ get_url(path=page.extra.profile_pic) }}" class="card-img-top" alt="{{ page.extra.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ page.extra.name }}</h5>
+          <p class="card-text">descriptive text</p>
+          <a href="{{ page.permalink | safe }}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock content %}

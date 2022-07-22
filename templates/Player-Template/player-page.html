@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block styling %} 
+<link rel="stylesheet" href="{{get_url(path='player.css', trailing_slash=false) }}"> 
+
+<!-- All stylings need in the html file -->
+<style>
+   
+.img-slideshow{
+    animation: animate 16s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%{
+        background-image: url("{{ get_url(path=page.extra.bg_img_1) }}");
+    }
+    33%{
+        background-image: url("{{ get_url(path=page.extra.bg_img_2) }}");
+    }
+    66%{
+        background-image: url("{{ get_url(path=page.extra.bg_img_3) }}");
+    }
+}
+
+</style>
+
+{% endblock %}
+
+
+<!-- Removed Navbar Here -->
+{% block navbar %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid p-0">
+    <div class="container-fluid p-0 img-slideshow">
+        <!-- Added navbar here -->
+        <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Le World After</a>
+              <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ get_url(path="players/") }}">Players</a></li>
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Server
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="{{ get_url(path="player-bases/") }}">Bases</a></li>
+                      </ul>
+                  </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+
+        <div class="container">
+            <div class = "container img-container">
+                <div class = "card img-profile-pic-frame">
+                    <img src="{{ get_url(path=page.extra.profile_pic) }}" class="img-profile-pic" alt="{{ page.extra.name }}">
+                </div>
+            </div>
+            <div class = "container player-title-container">
+                <div class = "card player-title-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center player-title">{{ page.extra.name }}</h5>
+                        <p class="card-text text-end player-doj">
+                            Joined the server on:<br>
+                            {{ page.extra.doj }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

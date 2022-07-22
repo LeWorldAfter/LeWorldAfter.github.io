@@ -1,0 +1,58 @@
+$first-page-color: #243C4E;
+$first-page-color-text: #D3FBDC;
+
+.test-container {
+    background-color: black;
+}
+
+// Background Slideshow Components
+.img-slideshow {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// Profile Pic Components
+.img-container {
+    margin-top: 5vh;
+}
+
+.img-profile-pic-frame {
+    padding: 10px;
+    width: fit-content;
+    background-color: $first-page-color  !important;
+    border-radius: 10px !important;
+}
+
+.img-profile-pic {
+    width: 20vh;
+    background-color: #b37640;
+    border-radius: 10px;
+}
+
+
+// Player Title Components
+.player-title-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    position: absolute;
+    bottom: 5vh;
+}
+
+.player-title-card {
+    background-color: $first-page-color  !important;
+    width: fit-content !important;
+    border-radius: 20px !important;
+}
+
+.player-title {
+    font-size: 75px;
+    color: $first-page-color-text;
+}
+
+.player-doj {
+    font-size: 15px;
+    color: $first-page-color-text;
+}
