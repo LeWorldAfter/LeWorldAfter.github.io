@@ -5,6 +5,7 @@ $first-page-color-text: #D3FBDC;
     background-color: black;
 }
 
+// Background Slideshow Components
 .img-slideshow {
     height: 100vh;
     background-repeat: no-repeat;
@@ -12,11 +13,11 @@ $first-page-color-text: #D3FBDC;
     background-position: center;
 }
 
+// Profile Pic Components
 .img-container {
     margin-top: 5vh;
 }
 
-// Profile Pic Components
 .img-profile-pic-frame {
     padding: 10px;
     width: fit-content;
@@ -31,7 +32,7 @@ $first-page-color-text: #D3FBDC;
 }
 
 
-// Player Description Components
+// Player Title Components
 .player-title-container {
     display: flex;
     align-items: flex-end;
