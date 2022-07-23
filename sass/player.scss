@@ -1,26 +1,46 @@
 $first-page-color: #243C4E;
 $first-page-color-text: #D3FBDC;
 
+$second-page-background-color: #edd6be;
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black !important;
+}
+
 .test-container {
-    background-color: black;
+    background-color: black !important;
 }
 
 // Background Slideshow Components
 .img-slideshow {
-    height: 100vh;
+    height: 100vh !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
-// Profile Pic Components
+.page-1-section {
+    height: 80vh;
+}
+
+// Profile Pic Components 
 .img-container {
     margin-top: 5vh;
 }
 
 .img-profile-pic-frame {
     padding: 10px;
-    width: fit-content;
+    width: fit-content !important;
     background-color: $first-page-color  !important;
     border-radius: 10px !important;
 }
@@ -32,13 +52,10 @@ $first-page-color-text: #D3FBDC;
 }
 
 
-// Player Title Components
+// Player Title Components 
 .player-title-container {
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
-    position: absolute;
-    bottom: 5vh;
+    margin-top: 35vh;
+    margin-bottom: 10vh;
 }
 
 .player-title-card {
@@ -48,11 +65,40 @@ $first-page-color-text: #D3FBDC;
 }
 
 .player-title {
-    font-size: 75px;
     color: $first-page-color-text;
 }
 
 .player-doj {
-    font-size: 15px;
     color: $first-page-color-text;
+}
+
+.page-2-section {
+    background-color: $second-page-background-color;
+}
+
+.card-section {
+    margin: 50px;
+}
+
+.player-description-card {
+    width: 40rem;
+    align-self: center;
+}
+
+.player-description {
+    color: $first-page-color-text;
+    text-align: center !important;
+    height: 20vh;
+}
+
+.card-1 {
+    background-color: #7B7554 !important;
+}
+
+.card-2 {
+    background-color: #826251 !important;
+}
+
+.card-3 {
+    background-color: #596223 !important;
 }

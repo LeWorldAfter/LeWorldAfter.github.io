@@ -36,49 +36,52 @@
 {% block content %}
 
 <div class="container-fluid p-0">
+
+    <!-- Background Image Slideshow -->
     <div class="container-fluid p-0 img-slideshow">
         <!-- Added navbar here -->
-        <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top fixed-top">
+        <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/">Le World After</a>
-              <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                      <li class="nav-item"><a class="nav-link" href="{{ get_url(path="players/") }}">Players</a></li>
-                      <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="navbar-brand" href="/">Le World After</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ get_url(path="players/") }}">Players</a></li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Server
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-dark">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="{{ get_url(path="player-bases/") }}">Bases</a></li>
-                      </ul>
-                  </li>
-                  </ul>
-              </div>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
 
-        <div class="container">
-            <div class = "container img-container">
+        <!-- Page-1 in the background slideshow -->
+        <div class="container page-1-section">
+            <div class = "container p-0 d-flex justify-content-start img-container">
                 <div class = "card img-profile-pic-frame">
                     <img src="{{ get_url(path=page.extra.profile_pic) }}" class="img-profile-pic" alt="{{ page.extra.name }}">
                 </div>
             </div>
-            <div class = "container player-title-container">
+            <div class = "container p-0 d-flex justify-content-end player-title-container">
                 <div class = "card player-title-card">
                     <div class="card-body">
-                        <h5 class="card-title text-center player-title">{{ page.extra.name }}</h5>
+                        <h1 class="card-title text-center player-title">{{ page.extra.name }}</h1>
                         <p class="card-text text-end player-doj">
                             Joined the server on:<br>
                             {{ page.extra.doj }}
@@ -88,6 +91,72 @@
             </div>
         </div>
     </div>
+
+    <!-- Card Carousel -->
+    <div class="container-fluid bg-dark page-2-section">
+        <div id="carouselIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container d-flex justify-content-center card-section">
+                        <div class = "card player-description-card card-1">
+                            <div class="card-body">
+                                <h1 class="card-title text-start player-title">{{ page.extra.name }}</h1>
+                                <div class="card-text text-start player-description">
+                                    {{ page.extra.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container d-flex justify-content-center card-section">
+                        <div class = "card player-description-card card-2">
+                            <div class="card-body">
+                                <h1 class="card-title text-start player-title">Hobbies</h1>
+                                <div class="card-text text-start player-description">
+                                    <ul>
+                                        <li>{{ page.extra.hobby_1 }}</li>
+                                        <li>{{ page.extra.hobby_2 }}</li>
+                                        <li>{{ page.extra.hobby_3 }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container d-flex justify-content-center card-section">
+                        <div class = "card player-description-card card-3">
+                            <div class="card-body">
+                                <h1 class="card-title text-start player-title">Competitions Won</h1>
+                                <div class="card-text text-start player-description">
+                                    <ul>
+                                        <li>{{ page.extra.competition_won_1 }}</li>
+                                        <li>{{ page.extra.competition_won_2 }}</li>
+                                        <li>{{ page.extra.competition_won_3 }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
 </div>
 
 {% endblock %}
