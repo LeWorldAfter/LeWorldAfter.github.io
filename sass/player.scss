@@ -1,7 +1,10 @@
-$first-page-color: #243C4E;
-$first-page-color-text: #D3FBDC;
+$page-color: #243C4E;
+$page-color-text: #D3FBDC;
+$page-color-text-hover: #66a374;
 
 $second-page-background-color: #edd6be;
+
+
 
 ::-webkit-scrollbar {
     display: none;
@@ -50,7 +53,7 @@ $second-page-background-color: #edd6be;
 .img-profile-pic-frame {
     padding: 10px;
     width: fit-content !important;
-    background-color: $first-page-color  !important;
+    background-color: $page-color  !important;
     border-radius: 10px !important;
     margin: 20px;
 }
@@ -68,18 +71,18 @@ $second-page-background-color: #edd6be;
 }
 
 .player-title-card {
-    background-color: $first-page-color  !important;
+    background-color: $page-color  !important;
     width: fit-content !important;
     border-radius: 20px !important;
     margin: 20px;
 }
 
 .player-title {
-    color: $first-page-color-text;
+    color: $page-color-text;
 }
 
 .player-doj {
-    color: $first-page-color-text;
+    color: $page-color-text;
 }
 
 .page-2-section {
@@ -97,7 +100,7 @@ $second-page-background-color: #edd6be;
 }
 
 .player-description {
-    color: $first-page-color-text;
+    color: $page-color-text;
     text-align: center !important;
 }
 
@@ -128,13 +131,13 @@ $second-page-background-color: #edd6be;
 }
 
 .bases-card {
-    background-color: $first-page-color  !important;
+    background-color: $page-color  !important;
     width: 30vw;
     height: 15vw !important;
     border-radius: 2vw !important;
     margin: 20px;
     margin-top: 30px;
-    color: $first-page-color-text  !important;
+    color: $page-color-text  !important;
 }
 
 .bases-title {
@@ -147,18 +150,26 @@ $second-page-background-color: #edd6be;
 
 .base-carousel-item {
     text-align: center;
-    font-size: xx-large;
     font-size: 2vw;
 }
 
+.base-carousel-item>a {
+    text-decoration: none !important;
+    color: $page-color-text  !important;
+}
+
+.base-carousel-item>a:hover {
+    color: $page-color-text-hover  !important;
+}
+
 .shops-card {
-    background-color: $first-page-color  !important;
+    background-color: $page-color  !important;
     width: 30vw;
     height: 15vw !important;
     border-radius: 2vw !important;
     margin: 20px;
     margin-top: 30px;
-    color: $first-page-color-text  !important;
+    color: $page-color-text  !important;
 }
 
 .shops-title {
@@ -171,11 +182,15 @@ $second-page-background-color: #edd6be;
 
 .shop-carousel-item {
     text-align: center;
-    font-size: xx-large;
     font-size: 2vw;
+
 }
 
-a {
+.shop-carousel-item>a {
     text-decoration: none !important;
-    color: $first-page-color-text  !important;
+    color: $page-color-text  !important;
+}
+
+.shop-carousel-item>a:hover {
+    color: $page-color-text-hover  !important;
 }
