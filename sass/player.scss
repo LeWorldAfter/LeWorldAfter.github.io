@@ -82,13 +82,13 @@ body {
 
 .player-description-card {
     width: 40rem;
-    align-self: center;
+    border-radius: 20px !important;
+    height: 40vh !important;
 }
 
 .player-description {
     color: $first-page-color-text;
     text-align: center !important;
-    height: 20vh;
 }
 
 .card-1 {
