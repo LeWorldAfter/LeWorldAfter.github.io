@@ -19,9 +19,15 @@ competition_won_1 = "Most Farms build"
 competition_won_2 = "Largest Map Collection"
 competition_won_3 = "Shadow's Easter Egg Hunt"
 
-bg_img_1 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-1.jpg"
-bg_img_2 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-2.jpg"
-bg_img_3 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-3.jpg"
+bg_img_1 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-1.webp"
+bg_img_2 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-2.webp"
+bg_img_3 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-3.webp"
+
+base_name_1 = "Castle Base"
+base_img_1 = "img/player-img/steve-img/bases-img/Steve_Castle_Base.webp"
+
+shop_name_1 = "Wheat Shop"
+shop_img_1 = "img/player-img/steve-img/shops-img/Steve_Wheat_Shop.webp"
 
 +++
 

@@ -12,8 +12,17 @@ $second-page-background-color: #edd6be;
     padding: 0;
 }
 
-body {
-    background-color: black !important;
+@media (min-width: 1200px) {
+    .player-description {
+        font-size: 20px;
+    }
+}
+
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+@media (max-width: 1199.98px) {
+    .player-description {
+        font-size: 15px;
+    }
 }
 
 .test-container {
@@ -35,7 +44,7 @@ body {
 
 // Profile Pic Components 
 .img-container {
-    margin-top: 5vh;
+    width: fit-content !important;
 }
 
 .img-profile-pic-frame {
@@ -43,6 +52,7 @@ body {
     width: fit-content !important;
     background-color: $first-page-color  !important;
     border-radius: 10px !important;
+    margin: 20px;
 }
 
 .img-profile-pic {
@@ -54,14 +64,14 @@ body {
 
 // Player Title Components 
 .player-title-container {
-    margin-top: 35vh;
-    margin-bottom: 10vh;
+    width: fit-content !important;
 }
 
 .player-title-card {
     background-color: $first-page-color  !important;
     width: fit-content !important;
     border-radius: 20px !important;
+    margin: 20px;
 }
 
 .player-title {
@@ -82,13 +92,13 @@ body {
 
 .player-description-card {
     width: 40rem;
-    align-self: center;
+    border-radius: 20px !important;
+    height: 40vh !important;
 }
 
 .player-description {
     color: $first-page-color-text;
     text-align: center !important;
-    height: 20vh;
 }
 
 .card-1 {
@@ -101,4 +111,71 @@ body {
 
 .card-3 {
     background-color: #596223 !important;
+}
+
+.page-3-section {
+    background-image: url("img/Builds_Page_cover.webp");
+    height: 100vh !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: all linear 0.2s;
+}
+
+.build-container {
+    height: 100vh;
+}
+
+.bases-card {
+    background-color: $first-page-color  !important;
+    width: 30vw;
+    height: 15vw !important;
+    border-radius: 2vw !important;
+    margin: 20px;
+    margin-top: 30px;
+    color: $first-page-color-text  !important;
+}
+
+.bases-title {
+    font-size: 3vw;
+}
+
+.base-carousel-section {
+    margin-top: 1.5vw !important;
+}
+
+.base-carousel-item {
+    text-align: center;
+    font-size: xx-large;
+    font-size: 2vw;
+}
+
+.shops-card {
+    background-color: $first-page-color  !important;
+    width: 30vw;
+    height: 15vw !important;
+    border-radius: 2vw !important;
+    margin: 20px;
+    margin-top: 30px;
+    color: $first-page-color-text  !important;
+}
+
+.shops-title {
+    font-size: 3vw;
+}
+
+.shop-carousel-section {
+    margin-top: 1.5vw !important;
+}
+
+.shop-carousel-item {
+    text-align: center;
+    font-size: xx-large;
+    font-size: 2vw;
+}
+
+a {
+    text-decoration: none !important;
+    color: $first-page-color-text  !important;
 }
