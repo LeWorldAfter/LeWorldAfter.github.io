@@ -1,13 +1,22 @@
 body {
-    display: flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #logo {
+        width: 75%;
+        padding: 50px 10px 50px 10px;
+        z-index: 100;
+    }
 
     #wheelDiv {
-        position: relative;
+        //position: relative;
         z-index: 100;
 
     }
 
     #particles-js {
+        top: 0;
         height: 100%;
         width: 100%;
         position: fixed;
