@@ -12,7 +12,7 @@
 
 @keyframes animate{
     0%,100%{
-        background-image: url("{{ get_url(path=page.extra.bg_img_1) }}");
+        background-image: url("{{ get_url(path=page.extra.bg_img_2) }}");
     }
     33%{
         background-image: url("{{ get_url(path=page.extra.bg_img_2) }}");
@@ -72,13 +72,13 @@
         </nav>
 
         <!-- Page-1 in the background slideshow -->
-        <div class="container page-1-section">
-            <div class = "container p-0 d-flex justify-content-start img-container">
+        <div class="container position-relative page-1-section">
+            <div class = "container p-0 position-absolute top-0 start-0 img-container">
                 <div class = "card img-profile-pic-frame">
                     <img src="{{ get_url(path=page.extra.profile_pic) }}" class="img-profile-pic" alt="{{ page.extra.name }}">
                 </div>
             </div>
-            <div class = "container p-0 d-flex justify-content-end player-title-container">
+            <div class = "container p-0 position-absolute bottom-0 end-0 player-title-container">
                 <div class = "card player-title-card">
                     <div class="card-body">
                         <h1 class="card-title text-center player-title">{{ page.extra.name }}</h1>
@@ -104,7 +104,7 @@
                 <div class="carousel-item active">
                     <div class="container d-flex justify-content-center card-section">
                         <div class = "card player-description-card card-1">
-                            <div class="card-body">
+                            <div class="card-body overflow-auto">
                                 <h1 class="card-title text-start player-title">{{ page.extra.name }}</h1>
                                 <div class="card-text text-start player-description">
                                     {{ page.extra.description }}
@@ -116,7 +116,7 @@
                 <div class="carousel-item">
                     <div class="container d-flex justify-content-center card-section">
                         <div class = "card player-description-card card-2">
-                            <div class="card-body">
+                            <div class="card-body overflow-auto">
                                 <h1 class="card-title text-start player-title">Hobbies</h1>
                                 <div class="card-text text-start player-description">
                                     <ul>
@@ -132,7 +132,7 @@
                 <div class="carousel-item">
                     <div class="container d-flex justify-content-center card-section">
                         <div class = "card player-description-card card-3">
-                            <div class="card-body">
+                            <div class="card-body overflow-auto">
                                 <h1 class="card-title text-start player-title">Competitions Won</h1>
                                 <div class="card-text text-start player-description">
                                     <ul>
@@ -157,6 +157,135 @@
         </div>
     </div>
 
+    <!-- Builds Page (Bases and Shops) -->
+    <div class="container-fluid p-0 page-3-section">
+        <div class="container position-relative build-container">
+
+            <!-- Bases Card -->
+            <div class = "card position-absolute top-0 start-0 bases-card">
+                <div class="card-body">
+                    <h1 class="card-title text-start bases-title">Bases</h1>
+                    <!-- Base Carousel -->
+                    <div class="container base-carousel-section">
+                        <div id="carouselBasesControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% if page.extra.base_name_1 %}
+                                <div id = "base-item-1" class="carousel-item active base-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{ page.extra.base_name_1 }}</a>
+                                </div>
+                                {% endif %}
+
+                                {% if page.extra.base_name_2 %}
+                                <div id = "base-item-2" class="carousel-item base-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{ page.extra.base_name_2 }}</a>
+                                </div>
+                                {% endif %}
+
+                                {% if page.extra.base_name_3 %}
+                                <div id = "base-item-3" class="carousel-item base-carousel-item ">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{ page.extra.base_name_3 }}</a>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBasesControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselBasesControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shops Card -->
+            <div class = "card position-absolute bottom-0 end-0 shops-card">
+                <div class="card-body">
+                    <h1 class="card-title text-start shops-title">Shops</h1>
+                    <!-- Shop Carousel -->
+                    <div class="container shop-carousel-section">
+                        <div id="carouselShopsControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% if page.extra.shop_name_1 %}
+                                <div id = "shop-item-1" class="carousel-item active shop-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{ page.extra.shop_name_1 }}</a>
+                                </div>
+                                {% endif %}
+
+                                {% if page.extra.shop_name_2 %}
+                                <div id = "shop-item-2" class="carousel-item shop-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{ page.extra.shop_name_2 }}</a>
+                                </div>
+                                {% endif %}
+
+                                {% if page.extra.shop_name_2 %}
+                                <div id = "shop-item-3" class="carousel-item shop-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{ page.extra.shop_name_2 }}</a>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselShopsControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselShopsControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    function changeBackgroundWithHover(elemItem, imgUrl){
+        if(!elemItem){
+            return;
+        }
+
+        // imgUrl = "page.extra." + buildType + "_img_" + imgNo;
+
+        elemItem.addEventListener('mouseenter', () => {
+            pageSection3.style.backgroundImage = imgUrl;
+            console.log("Hello");
+        });
+
+        elemItem.addEventListener('mouseleave', () => {
+            pageSection3.style.backgroundImage = "url('{{ get_url(path='img/Builds_Page_cover.webp') }}')";
+            console.log("Exit");
+        });
+    }
+
+    const baseItem1 = document.getElementById("base-item-1");
+    const baseItem2 = document.getElementById("base-item-2");
+    const baseItem3 = document.getElementById("base-item-3");
+
+    const shopItem1 = document.getElementById("shop-item-1");
+    const shopItem2 = document.getElementById("shop-item-2");
+    const shopItem3 = document.getElementById("shop-item-3");
+
+    const pageSection3 = document.getElementsByClassName("page-3-section")[0];
+
+    changeBackgroundWithHover(baseItem1, "url('{{ get_url(path=page.extra.base_img_1) }}')");
+    // changeBackgroundWithHover(baseItem2, "base", 2);
+    // changeBackgroundWithHover(baseItem3, "base", 3);
+
+    changeBackgroundWithHover(shopItem1, "url('{{ get_url(path=page.extra.shop_img_1) }}')");
+    // changeBackgroundWithHover(shopItem2, "shop", 2);
+    // changeBackgroundWithHover(shopItem3, "shop", 3);
+</script>
+
+<script src= {{ get_url(path="js/player.js") }}></script>
 
 {% endblock %}
