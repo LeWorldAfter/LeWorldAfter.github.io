@@ -22,12 +22,17 @@ bg_img_1 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-1.webp"
 bg_img_2 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-2.webp"
 bg_img_3 = "img/player-img/steve-img/background-img/Steve_Cover_Pic-3.webp"
 
-
 base_name_1 = "Castle Base"
 base_img_1 = "img/player-img/steve-img/bases-img/Steve_Castle_Base.webp"
 
 shop_name_1 = "Wheat Shop"
 shop_img_1 = "img/player-img/steve-img/shops-img/Steve_Wheat_Shop.webp"
+
+skin_name_1 = "Steve Original"
+skin_img_1 = "img/player-img/steve-img/skins-img/Steve_Original_Skin.png"
+
+skin_name_2 = "Jerin Original"
+skin_img_2 = "img/player-img/steve-img/skins-img/Jerin_Original.png"
 
 +++
 

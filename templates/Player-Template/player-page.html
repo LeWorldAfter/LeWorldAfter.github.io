@@ -12,7 +12,7 @@
 
 @keyframes animate{
     0%,100%{
-        background-image: url("{{ get_url(path=page.extra.bg_img_2) }}");
+        background-image: url("{{ get_url(path=page.extra.bg_img_1) }}");
     }
     33%{
         background-image: url("{{ get_url(path=page.extra.bg_img_2) }}");
@@ -242,12 +242,173 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid p-0 bg-dark page-5-section">
+
+        <div style="right:10px; background-color:lightgray; opacity: 50; font-family: 'Courier New',monospace;">
+            <div>
+                <div>
+                    <label for="nameInput">Username or URL</label>
+                    <input type="text" id="nameInput" placeholder="URL or Username" value="inventivetalent">
+                </div>
+                <div>
+                    <label for="capeInput">Cape</label>
+                    <input type="url" id="capeInput" placeholder="URL" value="https://minerender.org/img/optifine_hires_cape.png">
+                </div>
+            </div>
+            <div style="margin: 10px;">
+                <span><input type="checkbox" class="partToggle" id="hat" checked><label for="hat">Hat</label></span>
+                <span><input type="checkbox" class="partToggle" id="jacket" checked><label for="jacket">Jacket</label></span>
+                <br/>
+                <span><input type="checkbox" class="partToggle" id="leftSleeve" checked><label for="leftSleeve">Left Sleeve</label></span>
+                <span><input type="checkbox" class="partToggle" id="rightSleeve" checked><label for="rightSleeve">Right Sleeve</label></span>
+                <br/>
+                <span><input type="checkbox" class="partToggle" id="leftTrousers" checked><label for="leftTrousers">Left Trousers</label></span>
+                <span><input type="checkbox" class="partToggle" id="rightTrousers" checked><label for="rightTrousers">Right Trousers</label></span>
+                <br/>
+                <span><input type="checkbox" class="partToggle" id="cape" checked><label for="cape">Cape</label></span>
+            </div>
+            <div style="margin:10px">
+                <span><input type="checkbox" id="animate" checked><label for="animate">Animate</label></span>
+                <span><input type="checkbox" id="slim"><label for="slim">Slim</label></span>
+            </div>
+        </div>
+
+        <div id="carouselSkins" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div id="skin-item-1" class="container d-flex justify-content-center skin-item test-container">
+                    
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ page.extra.skin_name_2 }}</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div id="skin-item-2" class="container d-flex justify-content-center skin-item test-container">
+
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ page.extra.skin_name_1 }}</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div id="skin-item-3" class="container d-flex justify-content-center skin-item test-container">
+
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ page.extra.skin_name_1 }}</h5>
+                </div>
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSkins" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSkins" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
 
 </div>
 
 {% endblock %}
 
 {% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js" integrity="sha256-NGC9JEuTWN4GhTj091wctgjzftr+8WNDmw0H8J5YPYE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
+
+<!-- Skin Script -->
+<script>
+    function renderSkin(elemItem, imgUrl){
+        var skinRender = new SkinRender({
+            // autoResize: true,
+            // render: {
+            //     taa: true
+            // },
+            controls: {
+                zoom: false,
+                pan: false
+            },
+            canvas: {
+                width: 500,
+                height: 300
+            },
+            makeNonTransparentOpaque: false
+        }, elemItem);
+
+        skinRender.render({
+            url: imgUrl,
+            capeUrl: '{{ get_url(path=page.extra.skin_img_1) }}',
+            optifine: true,
+        });
+
+        
+
+        $("#slim").on("change", function() {
+            skinRender.clearScene();
+            var slim =  $("#slim").is(":checked");
+            var options = {};
+
+            options.url = imgUrl;
+
+            options.slim = slim;
+            skinRender.render(options);
+
+            // const toggleParts = document.getElementsByClassName(".partToggle");
+            // const toggleParts = $(".partToggle");
+
+            // console.log("Toggle Parts: ",$(toggleParts[4]).attr("id"));
+
+            // for(ind = 0; ind < toggleParts.length; ind++){
+            //     console.log("Toggle Parts: ",$(toggleParts[ind]).attr("id"));
+            //     skinRender.getModelByName($(toggleParts[ind]).attr("id")).visible = $(toggleParts[ind]).is(":checked");
+            // }
+        })
+
+        $(".partToggle").on("change", function () {
+            // console.log("Toggling Part: ", $(this).attr("id"));
+            skinRender.getModelByName($(this).attr("id")).visible = $(this).is(":checked");
+        });
+
+        var animate = true;
+        $("#animate").on("change", function () {
+            animate = $(this).is(":checked");
+        });
+
+        var startTime = Date.now();
+        elemItem.addEventListener("skinRender", function (e) {
+            if (animate) {
+                var t = (Date.now() - startTime) / 1000;
+                e.detail.playerModel.children[2].rotation.x = Math.sin(t * 5) / 2;
+                e.detail.playerModel.children[3].rotation.x = -Math.sin(t * 5) / 2;
+                e.detail.playerModel.children[4].rotation.x = Math.sin(t * 5) / 2;
+                e.detail.playerModel.children[5].rotation.x = -Math.sin(t * 5) / 2;
+            }
+        })
+    }
+
+    const skinItem1 = document.getElementById("skin-item-1");
+    const skinItem2 = document.getElementById("skin-item-2");
+    const skinItem3 = document.getElementById("skin-item-3");
+
+    const pageSection5 = document.getElementsByClassName("page-5-section")[0];
+
+    renderSkin(skinItem1, '{{ get_url(path=page.extra.skin_img_2) }}');
+    renderSkin(skinItem2, '{{ get_url(path=page.extra.skin_img_1) }}');
+    renderSkin(skinItem3, '{{ get_url(path=page.extra.skin_img_1) }}');
+    
+</script>
+
+<!-- Background Script -->
 <script>
     function changeBackgroundWithHover(elemItem, imgUrl){
         if(!elemItem){
