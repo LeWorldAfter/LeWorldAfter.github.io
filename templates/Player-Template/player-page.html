@@ -243,33 +243,53 @@
         </div>
     </div>
     <div class="container-fluid p-0 bg-dark page-5-section">
-
-        <div style="right:10px; background-color:lightgray; opacity: 50; font-family: 'Courier New',monospace;">
-            <div>
-                <div>
-                    <label for="nameInput">Username or URL</label>
-                    <input type="text" id="nameInput" placeholder="URL or Username" value="inventivetalent">
+        <div class="container fs-1 text-center ">Skins</div>
+        <div class="container skinOptions">
+            <div class = "container row">
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="hat" checked>
+                    <label class="form-check-label" for="hat">Hat</label>
                 </div>
-                <div>
-                    <label for="capeInput">Cape</label>
-                    <input type="url" id="capeInput" placeholder="URL" value="https://minerender.org/img/optifine_hires_cape.png">
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="jacket" checked>
+                    <label class="form-check-label" for="jacket">Jacket</label>
                 </div>
             </div>
-            <div style="margin: 10px;">
-                <span><input type="checkbox" class="partToggle" id="hat" checked><label for="hat">Hat</label></span>
-                <span><input type="checkbox" class="partToggle" id="jacket" checked><label for="jacket">Jacket</label></span>
-                <br/>
-                <span><input type="checkbox" class="partToggle" id="leftSleeve" checked><label for="leftSleeve">Left Sleeve</label></span>
-                <span><input type="checkbox" class="partToggle" id="rightSleeve" checked><label for="rightSleeve">Right Sleeve</label></span>
-                <br/>
-                <span><input type="checkbox" class="partToggle" id="leftTrousers" checked><label for="leftTrousers">Left Trousers</label></span>
-                <span><input type="checkbox" class="partToggle" id="rightTrousers" checked><label for="rightTrousers">Right Trousers</label></span>
-                <br/>
-                <span><input type="checkbox" class="partToggle" id="cape" checked><label for="cape">Cape</label></span>
+            <div class="container row">
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="leftSleeve" checked>
+                    <label class="form-check-label" for="leftSleeve">Left Sleeve</label>
+                </div>
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="rightSleeve" checked>
+                    <label class="form-check-label" for="rightSleeve">Right Sleeve</label>
+                </div>
             </div>
-            <div style="margin:10px">
-                <span><input type="checkbox" id="animate" checked><label for="animate">Animate</label></span>
-                <span><input type="checkbox" id="slim"><label for="slim">Slim</label></span>
+            <div class="container row">
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="leftTrousers" checked>
+                    <label class="form-check-label" for="leftTrousers">Left Trousers</label>
+                </div>
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="rightTrousers" checked>
+                    <label class="form-check-label" for="rightTrousers">Right Trousers</label>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="cape" checked>
+                    <label class="form-check-label" for="cape">Cape</label>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="animate" checked>
+                    <label class="form-check-label" for="animate">Animate</label>
+                </div>
+                <div class="col-3 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="slim" checked>
+                    <label class="form-check-label" for="slim">Slim</label>
+                </div>
             </div>
         </div>
 
@@ -331,9 +351,9 @@
     function renderSkin(elemItem, imgUrl){
         var skinRender = new SkinRender({
             // autoResize: true,
-            // render: {
-            //     taa: true
-            // },
+            render: {
+                taa: true
+            },
             controls: {
                 zoom: false,
                 pan: false
@@ -342,41 +362,42 @@
                 width: 500,
                 height: 300
             },
+            pauseHidden: false,
             makeNonTransparentOpaque: false
         }, elemItem);
 
         skinRender.render({
             url: imgUrl,
-            capeUrl: '{{ get_url(path=page.extra.skin_img_1) }}',
-            optifine: true,
+            capeUrl: '{{ get_url(path="img/Migrator_Cape.png") }}'
         });
-
-        
 
         $("#slim").on("change", function() {
             skinRender.clearScene();
+
             var slim =  $("#slim").is(":checked");
             var options = {};
 
             options.url = imgUrl;
-
+            options.capeUrl = '{{ get_url(path="img/Migrator_Cape.png") }}';
             options.slim = slim;
-            skinRender.render(options);
+            
+            skinRender.render(options, () => {
+                const toggleParts = $(".partToggle");
 
-            // const toggleParts = document.getElementsByClassName(".partToggle");
-            // const toggleParts = $(".partToggle");
-
-            // console.log("Toggle Parts: ",$(toggleParts[4]).attr("id"));
-
-            // for(ind = 0; ind < toggleParts.length; ind++){
-            //     console.log("Toggle Parts: ",$(toggleParts[ind]).attr("id"));
-            //     skinRender.getModelByName($(toggleParts[ind]).attr("id")).visible = $(toggleParts[ind]).is(":checked");
-            // }
-        })
+                for(ind = 0; ind < toggleParts.length; ind++){
+                    var togglePart = toggleParts[ind];
+                    // console.log("Toggle Parts: ",$(togglePart).attr("id"));
+                    // console.log("Toggle Status: ", $(togglePart).is(":checked"));
+                    // console.log("Model Info: ", skinRender.getModelByName($(togglePart).attr("id")));
+                    skinRender.getModelByName($(togglePart).attr("id")).visible = $(togglePart).is(":checked");
+                }
+            });
+        });
 
         $(".partToggle").on("change", function () {
-            // console.log("Toggling Part: ", $(this).attr("id"));
+            console.log("Toggling Part: ", $(this).attr("id"));
             skinRender.getModelByName($(this).attr("id")).visible = $(this).is(":checked");
+            console.log("Model Info: ", skinRender.getModelByName($(this).attr("id")));
         });
 
         var animate = true;
@@ -400,10 +421,10 @@
     const skinItem2 = document.getElementById("skin-item-2");
     const skinItem3 = document.getElementById("skin-item-3");
 
-    const pageSection5 = document.getElementsByClassName("page-5-section")[0];
+    // const pageSection5 = document.getElementsByClassName("page-5-section")[0];
 
     renderSkin(skinItem1, '{{ get_url(path=page.extra.skin_img_2) }}');
-    renderSkin(skinItem2, '{{ get_url(path=page.extra.skin_img_1) }}');
+    renderSkin(skinItem2, '{{ get_url(path=page.extra.skin_img_2) }}');
     renderSkin(skinItem3, '{{ get_url(path=page.extra.skin_img_1) }}');
     
 </script>

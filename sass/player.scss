@@ -197,8 +197,19 @@ $second-page-background-color: #edd6be;
 
 .page-5-section {
     height: 100vh !important;
+    color: $page-color-text;
+}
+
+.skinOptions {
+    background-color: $page-color;
+    // width: 30vw !important;
+    padding: 20px;
+    border-radius: 1vw;
 }
 
 .skin-item {
-    height: 500px;
+    // height: 70vh;
+    width: fit-content !important;
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
