@@ -3,10 +3,32 @@ body {
     justify-content: center;
     align-items: center;
 
+    @keyframes float-in {
+        0% {
+            transform: translate(0%, 100%);
+            opacity: 0%;
+        }
+        
+        50% {
+            
+            opacity: 0%;
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+            opacity: 100%;
+        }
+    }
+
     #logo {
         width: 75%;
         padding: 50px 10px 50px 10px;
         z-index: 100;
+        //animation
+        animation-name: float-in;
+        animation-duration: 1s;
+        animation-iteration-count:1;
+        animation-timing-function: ease-out;
     }
 
     #wheelDiv {
