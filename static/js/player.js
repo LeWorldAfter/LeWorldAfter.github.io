@@ -1,3 +1,7 @@
+function getFileName(str){
+    return str.substring(str.lastIndexOf('/') + 1);
+}
+
 var skinSideBar = document.getElementById("skinSideBar");
 var skinEditBtn = document.getElementById("skinEditBtn");
 
@@ -8,12 +12,4 @@ skinEditBtn.addEventListener("click", () => {
         skinEditBtn.innerHTML = "Close";
     else
         skinEditBtn.innerHTML = "Edit Skin";
-});
-
-var downloadBtn = document.getElementById("downloadBtn");
-var skinCarouselInner = document.getElementById("skinCarouselInner");
-
-downloadBtn.addEventListener("click", () => {
-    console.log("Click!");
-    // skinCarouselInner.getElementsByClassName("active")[0];
 });

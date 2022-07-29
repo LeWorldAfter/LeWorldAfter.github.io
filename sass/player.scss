@@ -236,16 +236,17 @@ $second-page-background-color: #edd6be;
 }
 
 .skinMainPage {
-    margin: 50px;
+    margin: 20px;
 }
 
 #carouselSkins {
     margin-top: 30px;
     margin-bottom: 30px;
+    background-color: $page-color;
 }
 
 .skin-item {
-    width: fit-content !important;
+    // width: fit-content !important;
     margin-top: 70px;
     margin-bottom: 70px;
 }

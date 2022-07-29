@@ -242,7 +242,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Skin Page -->
     <div class="container-fluid p-0 d-flex bg-dark page-5-section">
+
+        <!-- Skin Edit Sidebar -->
         <div class="overflow-auto skinOptionsSideBar" id="skinSideBar">
             <div class="container skinOptions">
                 <h1 class="fs-2">Skin Edit</h1>
@@ -305,44 +309,61 @@
             </div>
         </div>
 
-        <div class="container-fluid p-0 skinMainPage">
+        <!-- Main Skin Page -->
+        <div class="container-fluid p-0 overflow-auto skinMainPage">
             <div class="container fs-1 text-center ">Skins</div>
 
             <div class="container-fluid">
                 <button type="button" class="btn btn-light skin-edit-btn" id="skinEditBtn">Edit Skin</button>
             </div>
 
-            <div id="carouselSkins" class="carousel slide test-container">
+            <div id="carouselSkins" class="carousel slide">
                 <div class="carousel-indicators">
+                    {% if page.extra.skin_img_1 %}
                     <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    {% endif %}
+
+                    {% if page.extra.skin_img_2 %}
                     <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    {% endif %}
+
+                    {% if page.extra.skin_img_3 %}
                     <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    {% endif %}
                 </div>
                 <div class="carousel-inner" id="skinCarouselInner" >
+                    {% if page.extra.skin_img_1 %}
                     <div class="carousel-item active">
-                        <div id="skin-item-1" class="container d-flex justify-content-center skin-item test-container">
+                        <div id="skin-item-1" class="container d-flex justify-content-center align-items-center skin-item">
                             
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ page.extra.skin_name_1 }}</h5>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if page.extra.skin_img_2 %}
+                    <div class="carousel-item">
+                        <div id="skin-item-2" class="container d-flex justify-content-center skin-item">
+
                         </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{ page.extra.skin_name_2 }}</h5>
                         </div>
                     </div>
+                    {% endif %}
+
+                    {% if page.extra.skin_img_3 %}
                     <div class="carousel-item">
-                        <div id="skin-item-2" class="container d-flex justify-content-center skin-item test-container">
+                        <div id="skin-item-3" class="container d-flex justify-content-center skin-item">
 
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ page.extra.skin_name_1 }}</h5>
+                            <h5>{{ page.extra.skin_name_3 }}</h5>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div id="skin-item-3" class="container d-flex justify-content-center skin-item test-container">
-
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ page.extra.skin_name_1 }}</h5>
-                        </div>
-                    </div>
+                    {% endif %}
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselSkins" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -450,9 +471,9 @@
 
     // const pageSection5 = document.getElementsByClassName("page-5-section")[0];
 
-    renderSkin(skinItem1, '{{ get_url(path=page.extra.skin_img_2) }}');
+    renderSkin(skinItem1, '{{ get_url(path=page.extra.skin_img_1) }}');
     renderSkin(skinItem2, '{{ get_url(path=page.extra.skin_img_2) }}');
-    renderSkin(skinItem3, '{{ get_url(path=page.extra.skin_img_1) }}');
+    renderSkin(skinItem3, '{{ get_url(path=page.extra.skin_img_3) }}');
     
 </script>
 
@@ -487,14 +508,46 @@
     const pageSection3 = document.getElementsByClassName("page-3-section")[0];
 
     changeBackgroundWithHover(baseItem1, "url('{{ get_url(path=page.extra.base_img_1) }}')");
-    // changeBackgroundWithHover(baseItem2, "base", 2);
-    // changeBackgroundWithHover(baseItem3, "base", 3);
 
     changeBackgroundWithHover(shopItem1, "url('{{ get_url(path=page.extra.shop_img_1) }}')");
-    // changeBackgroundWithHover(shopItem2, "shop", 2);
-    // changeBackgroundWithHover(shopItem3, "shop", 3);
+</script>
+
+<!-- Download Script -->
+<script>
+    var downloadBtn = document.getElementById("downloadBtn");
+    var skinCarouselInner = document.getElementById("skinCarouselInner");
+
+    downloadBtn.addEventListener("click", () => {
+        let skinElem = skinCarouselInner.getElementsByClassName("active")[0].getElementsByClassName("skin-item")[0];
+        let skinId = skinElem.id;
+
+        let imgUrl = null;
+
+        if(skinId == "skin-item-1"){
+            imgUrl = '{{ get_url(path=page.extra.skin_img_1) }}';
+        }
+        else if(skinId == "skin-item-2"){
+            imgUrl = '{{ get_url(path=page.extra.skin_img_2) }}';
+        }
+        else if(skinId == "skin-item-3"){
+            imgUrl = '{{ get_url(path=page.extra.skin_img_3) }}';
+        }
+        
+        if(imgUrl != null){
+            let fileName = getFileName(imgUrl);
+
+            // console.log("Skin Element: ", skinElem);
+            // console.log("Skin Id: ", skinId);
+            // console.log("Image URL: ", imgUrl);
+            // console.log("File Name: ", fileName);
+
+            saveAs(imgUrl, fileName);
+        }
+        
+    });
 </script>
 
 <script src= {{ get_url(path="js/player.js") }}></script>
+<script src= {{ get_url(path="js/FileSaver.js") }}></script>
 
 {% endblock %}
