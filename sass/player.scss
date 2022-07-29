@@ -200,15 +200,51 @@ $second-page-background-color: #edd6be;
     color: $page-color-text;
 }
 
+.skinOptionsSideBar {
+    width: 250px;
+    height: 100vh;
+    // position: fixed;
+    background-color: #826251;
+    margin-left: -250px;
+    transition: 0.4s;
+}
+
+.active-sidebar {
+    margin-left: 0px;
+}
+
 .skinOptions {
-    background-color: $page-color;
-    // width: 30vw !important;
-    padding: 20px;
-    border-radius: 1vw;
+    margin: 10px;
+}
+
+.toggle-container {
+    margin-top: 20px !important;
+}
+
+.skin-edit-btn {
+    background-color: #826251 !important;
+    border-color: #664c3f !important;
+    color: $page-color-text  !important;
+}
+
+.skin-edit-btn:hover {
+    background-color: #755748 !important;
+}
+
+.skin-edit-btn:focus {
+    box-shadow: 0 0 0 3px rgba(170, 133, 114, 0.5) !important;
+}
+
+.skinMainPage {
+    margin: 50px;
+}
+
+#carouselSkins {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .skin-item {
-    // height: 70vh;
     width: fit-content !important;
     margin-top: 70px;
     margin-bottom: 70px;
