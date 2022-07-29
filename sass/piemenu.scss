@@ -1,0 +1,102 @@
+ #piemenu>svg {
+     width: 100%;
+     height: 100%;
+ }
+
+ #piemenu {
+     height: 600px;
+     width: 600px;
+     margin: -300px 0 0 -300px;
+     position: absolute;
+     top: 57.5%;
+     left: 50%;
+ }
+
+ @media (max-width: 400px) {
+     #piemenu {
+         height: 300px;
+         width: 300px;
+     }
+ }
+
+ //wheel sections
+ $wheel-sections: 6;
+
+ //wheel colors
+ $wheel-colors: (
+     #ffff7d,
+     #ff7eff,
+     #ff5757,
+     #ffac71,
+     #a05bff,
+     #6a9eff
+ );
+
+ //handles pie wheel css
+ @for $i from 0 through $wheel-sections - 1 {
+
+     //basic
+     [class|=wheelnav-piemenu-slice-basic-#{$i}] {
+         fill: nth($wheel-colors, $i + 1);
+         stroke: none;
+     }
+
+     //on select
+     [class|=wheelnav-piemenu-slice-selected-#{$i}] {
+         //@extend .wheelnav-piemenu-slice-basic-#{$i};
+         fill: nth($wheel-colors, $i + 1);
+         filter: brightness(150%);
+         filter: saturate(200%);
+         stroke: none;
+
+     }
+
+     //on hover
+     [class|=wheelnav-piemenu-slice-hover-#{$i}] {
+         //@extend .wheelnav-piemenu-slice-basic-#{$i};
+         fill: nth($wheel-colors, $i + 1);
+         filter: saturate(250%);
+         fill-opacity: 0.7;
+         cursor: pointer;
+         stroke: none;
+     }
+
+ }
+
+
+ //titles
+ [class|=wheelnav-piemenu-title-basic] {
+     fill: #333;
+     stroke: none;
+ }
+
+ [class|=wheelnav-piemenu-title-selected] {
+     fill: #fff;
+     stroke: none;
+ }
+
+ [class|=wheelnav-piemenu-title-hover] {
+     fill: #222;
+     stroke: none;
+     cursor: pointer;
+ }
+
+ .wheelnav-piemenu-spreader-in,
+ .wheelnav-piemenu-spreader-out {
+     fill: #444;
+     stroke: #444;
+     stroke-width: 2;
+     cursor: pointer;
+ }
+
+ .wheelnav-piemenu-spreadertitle-in,
+ .wheelnav-piemenu-spreadertitle-out {
+     fill: #eee;
+     stroke: #444;
+     cursor: pointer;
+ }
+
+ .wheelnav-piemenu-marker {
+     stroke: #444;
+     stroke-width: 2;
+ }
