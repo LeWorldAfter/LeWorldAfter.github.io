@@ -194,3 +194,59 @@ $second-page-background-color: #edd6be;
 .shop-carousel-item>a:hover {
     color: $page-color-text-hover  !important;
 }
+
+.page-5-section {
+    height: 100vh !important;
+    color: $page-color-text;
+}
+
+.skinOptionsSideBar {
+    width: 250px;
+    height: 100vh;
+    // position: fixed;
+    background-color: #826251;
+    margin-left: -250px;
+    transition: 0.4s;
+}
+
+.active-sidebar {
+    margin-left: 0px;
+}
+
+.skinOptions {
+    margin: 10px;
+}
+
+.toggle-container {
+    margin-top: 20px !important;
+}
+
+.skin-edit-btn {
+    background-color: #826251 !important;
+    border-color: #664c3f !important;
+    color: $page-color-text  !important;
+}
+
+.skin-edit-btn:hover {
+    background-color: #755748 !important;
+}
+
+.skin-edit-btn:focus {
+    box-shadow: 0 0 0 3px rgba(170, 133, 114, 0.5) !important;
+}
+
+.skinMainPage {
+    margin: 20px;
+}
+
+#carouselSkins {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: $page-color;
+}
+
+.skin-item {
+    // width: fit-content !important;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
