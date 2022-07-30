@@ -38,17 +38,20 @@
       piemenu.animatetime = 250;
       piemenu.animateeffect = 'back-out';
       piemenu.selectedNavItemIndex = null;
+      piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
+      piemenu.initPercent = 0.1;
       piemenu.createWheel();
     };
 
   </script>
 
-  <link rel="stylesheet" type="text/css" href="resource/wheelnav-js/piemenu.css" />
+  <link rel="stylesheet" type="text/css" href="piemenu.css" />
 
 </head>
 
 <body>
   <div id="particles-js"></div>
+  <img src="resource/home_icons/lwa_logo_anim.gif" alt="LWA Logo" id="logo" >
   <div id="wheelDiv"></div>
   <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
     data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
