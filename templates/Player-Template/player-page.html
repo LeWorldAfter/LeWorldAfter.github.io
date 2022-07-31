@@ -35,10 +35,10 @@
 
 {% block content %}
 
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 player-page-main">
 
     <!-- Background Image Slideshow -->
-    <div class="container-fluid p-0 img-slideshow">
+    <div class="container-fluid p-0 img-slideshow page-1-section">
         <!-- Added navbar here -->
         <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
@@ -72,7 +72,7 @@
         </nav>
 
         <!-- Page-1 in the background slideshow -->
-        <div class="container position-relative page-1-section">
+        <div class="container position-relative page-1-section-main">
             <div class = "container p-0 position-absolute top-0 start-0 img-container">
                 <div class = "card img-profile-pic-frame">
                     <img src="{{ get_url(path=page.extra.profile_pic) }}" class="img-profile-pic" alt="{{ page.extra.name }}">
