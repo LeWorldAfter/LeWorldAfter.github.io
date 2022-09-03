@@ -3,9 +3,11 @@ $bg-image-num: 6;
 body::after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
     //simple loop here to preload images 
+    $bg-image-urls: null;
     @for $i from 1 through $bg-image-num {
-        content: url("../resource/home_icons/bg#{$i}.webp");
+        $bg-image-urls: $bg-image-urls url("../resource/home_icons/bg#{$i}.webp");
     }
+    content: $bg-image-urls;
  }
 
 body {
@@ -41,8 +43,8 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        transition: background 1.5s linear;
-        //animation for background change
+        transition: background 0s linear;
+
 
 
         /* //for generated gradient
@@ -55,10 +57,9 @@ body {
 
         //animation for image slideshow
         animation-name: bg-change;
-        animation-duration: #{$bg-image-num * 5}s;
+        animation-duration: #{$bg-image-num * 15}s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        animation-fill-mode: calc();
 
         /*//animation for appearing
         animation-name: fade-in;
@@ -109,8 +110,8 @@ body {
         @for $i from 0 through $bg-image-num - 1 {
             #{100/($bg-image-num - 1)*$i}% {
                 background-image: url("../resource/home_icons/bg#{$i + 1}.webp");
-                -webkit-transition: background-image 0.2s ease-in-out;
-                transition: background-image 0.2s ease-in-out;
+                -webkit-transition: background-image 0.2s linear;
+                transition: background-image 0.2s linear;
             }
         }
 
