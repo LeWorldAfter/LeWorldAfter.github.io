@@ -1,3 +1,15 @@
+$bg-image-num: 6;
+
+body::after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+    //simple loop here to preload images 
+    $bg-image-urls: null;
+    @for $i from 1 through $bg-image-num {
+        $bg-image-urls: $bg-image-urls url("../resource/home_icons/bg#{$i}.webp");
+    }
+    content: $bg-image-urls;
+ }
+
 body {
     display: flex;
     justify-content: center;
@@ -18,12 +30,6 @@ body {
         //position: relative;
         z-index: 100;
 
-        //animation
-        animation-name: fade-in;
-        animation-duration: 10s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease-out;
-
     }
 
     #particles-js {
@@ -32,17 +38,34 @@ body {
         width: 100%;
         position: fixed;
         z-index: -100;
+
+        background-image: url("../resource/home_icons/bg.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: background 0s linear;
+
+
+
+        /* //for generated gradient
         background: rgb(138, 255, 149);
         background-image: -moz-linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
         background-image: -webkit-linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
         background-image: linear-gradient(180deg, rgba(138, 255, 149, 1) 40%, rgba(251, 235, 134, 1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8aff95", endColorstr="#fbeb86", GradientType=1);
+        */
 
-        //animation
+        //animation for image slideshow
+        animation-name: bg-change;
+        animation-duration: #{$bg-image-num * 15}s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        /*//animation for appearing
         animation-name: fade-in;
         animation-duration: 2s;
         animation-iteration-count: 1;
-        animation-timing-function: ease-out;
+        animation-timing-function: ease-out;*/
     }
 
     #home_footer {
@@ -77,6 +100,19 @@ body {
 
         100% {
             opacity: 100%;
+        }
+
+    }
+
+    @keyframes bg-change {
+
+        //handles bg images
+        @for $i from 0 through $bg-image-num - 1 {
+            #{100/($bg-image-num - 1)*$i}% {
+                background-image: url("../resource/home_icons/bg#{$i + 1}.webp");
+                -webkit-transition: background-image 0.2s linear;
+                transition: background-image 0.2s linear;
+            }
         }
 
     }
