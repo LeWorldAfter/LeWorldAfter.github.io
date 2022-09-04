@@ -243,9 +243,31 @@
         </div>
     </div>
 
-    <div class="container-fluid p-0 page-4-section">
-        <div class="container fs-1 text-center">Achievements</div>
+    <!-- Advancement Page -->
+    <div class="container-fluid p-0 overflow-auto page-4-section">
+        <div class="container fs-1 text-center">Advancements</div>
+        <div class="container advancements">
+            <input type="radio" id="tabNether" name="advancements" checked="checked">
+            <label for="tabNether">
+                <img src="{{ get_url(path=config.extra.advancements.nether) }}" alt = "Nether"/>
+            </label>
+            <div class="tab">
+                <h2>Nether</h2>
+                <div class="container advancementSection" id="netherSection">
 
+                </div>
+            </div>
+            <input type="radio" id="tabAdventure" name="advancements">
+            <label for="tabAdventure">
+                <img src="{{ get_url(path=config.extra.advancements.adventure) }}" alt = "Adventure"/>
+            </label>
+            <div class="tab">
+                <h2>Adventure</h2>
+                <div class="container advancementSection" id="adventureSection">
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Skin Page -->

@@ -4,6 +4,13 @@ $page-color-text-hover: #66a374;
 
 $second-page-background-color: #edd6be;
 
+$minecraft-inventory-focus-color: #c6c6c6;
+$minecraft-inventory-not-focus-color: #8b8b8b;
+$minecraft-inventory-light-color: #ffffff;
+$minecraft-inventory-shadow-color: #555555;
+$minecraft-inventory-outline-color: #000000;
+$minecraft-inventory-font-color: #3f3f3f;
+
 
 
 ::-webkit-scrollbar {
@@ -13,6 +20,12 @@ $second-page-background-color: #edd6be;
 * {
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url("fonts/minecraft.ttf") format("truetype"),
+        url("fonts/minecraft.woff") format("woff");
 }
 
 @media (min-width: 1200px) {
@@ -217,6 +230,85 @@ $second-page-background-color: #edd6be;
     background-color: #755748;
     color: $page-color-text;
     scroll-snap-align: start;
+}
+
+.advancements {
+    font-family: Minecraft;
+    background: #363c49;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.advancements input[type="radio"] {
+    display: none;
+}
+
+.advancements label {
+    padding: 10px;
+    margin-right: 20px;
+    height: 100px;
+    margin-bottom: -30px;
+    background: $minecraft-inventory-not-focus-color;
+    border: 2px solid $minecraft-inventory-outline-color;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: inset 5px 5px $minecraft-inventory-light-color, inset -5px 0px $minecraft-inventory-shadow-color;
+}
+
+.advancements label img {
+    width: 50px;
+}
+
+.advancements .tab {
+    width: 100%;
+    padding: 20px;
+    color: $minecraft-inventory-font-color;
+    background: $minecraft-inventory-focus-color;
+    border: 2px solid $minecraft-inventory-outline-color;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px $minecraft-inventory-light-color, inset -5px -5px $minecraft-inventory-shadow-color;
+    display: none;
+    order: 1;
+}
+
+.advancements input[type="radio"]:checked+label+.tab {
+    display: block;
+}
+
+.advancements input[type="radio"]:checked+label {
+    background: $minecraft-inventory-focus-color;
+}
+
+.advancements #tabNether+label+.tab {
+    border-top-left-radius: 0px;
+}
+
+.advancements .advancementSection {
+    height: 60vh;
+    border: 3px solid;
+    border-left-color: $minecraft-inventory-outline-color;
+    border-top-color: $minecraft-inventory-outline-color;
+    border-right-color: grey;
+    border-bottom-color: grey;
+    box-shadow: inset 1px 1px 25px $minecraft-inventory-outline-color;
+}
+
+.advancements #netherSection {
+
+    background-image: url("../img/Netherrack_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advancements #adventureSection {
+
+    background-image: url("../img/Sand_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 //Page 5 Section
