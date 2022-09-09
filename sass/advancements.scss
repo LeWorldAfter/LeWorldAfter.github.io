@@ -1,0 +1,258 @@
+$minecraft-inventory-focus-color: #c6c6c6;
+$minecraft-inventory-not-focus-color: #8b8b8b;
+$minecraft-inventory-light-color: #ffffff;
+$minecraft-inventory-shadow-color: #555555;
+$minecraft-inventory-outline-color: #000000;
+$minecraft-inventory-font-color: #3f3f3f;
+
+$minecraft-advancement-complete-banner-color: #b98f2c;
+$minecraft-advancement-complete-icon-color: #aa7e0f;
+$minecraft-advancement-complete-light-color: #dba213;
+$minecraft-advancement-complete-shadow-color: #493606;
+
+$minecraft-advancement-incomplete-banner-color: #036a96;
+
+$minecraft-advancement-body-color: #212121;
+$minecraft-advancement-font-color: #54fc54;
+$minecraft-advancement-chanllenge-font-color: #a800a8;
+
+.advancements {
+    font-family: Minecraft;
+    background: #363c49;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.advancements input[type="radio"] {
+    display: none;
+}
+
+.advancements label {
+    padding: 10px;
+    margin-right: 20px;
+    height: 75px;
+    margin-bottom: -8px;
+    background: $minecraft-inventory-not-focus-color;
+    border: 2px solid $minecraft-inventory-outline-color;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0px;
+    box-shadow: inset 5px 5px $minecraft-inventory-light-color, inset -5px 0px $minecraft-inventory-shadow-color;
+}
+
+.advancements label img {
+    width: 50px;
+}
+
+.advancements .tab {
+    width: 100%;
+    padding: 20px;
+    color: $minecraft-inventory-font-color;
+    background: $minecraft-inventory-focus-color;
+    border: 2px solid $minecraft-inventory-outline-color;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px $minecraft-inventory-light-color, inset -5px -5px $minecraft-inventory-shadow-color;
+    display: none;
+    order: 1;
+}
+
+.advancements input[type="radio"]:checked+label+.tab {
+    display: block;
+}
+
+.advancements input[type="radio"]:checked+label {
+    background: $minecraft-inventory-focus-color;
+    z-index: 10;
+}
+
+.advancements #tabNether+label+.tab {
+    border-top-left-radius: 0px;
+}
+
+.advancements .advancementSection {
+    height: 60vh;
+    display: flex;
+    padding: 0px 150px;
+    align-items: center;
+    border: 3px solid;
+    border-left-color: $minecraft-inventory-outline-color;
+    border-top-color: $minecraft-inventory-outline-color;
+    border-right-color: grey;
+    border-bottom-color: grey;
+    box-shadow: inset 1px 1px 25px $minecraft-inventory-outline-color;
+}
+
+.advancements #netherSection {
+    background-image: url("../img/Netherrack_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advancements #adventureSection {
+    background-image: url("../img/Sand_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advancements #endSection {
+    background-image: url("../img/End_Stone_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advancements #husbandrySection {
+    background-image: url("../img/Dirt_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advancements #minecraftSection {
+    background-image: url("../img/Stone_Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advancements .node--root {
+    background: blue;
+}
+
+.advancements .node {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.advancements .node__element {
+    // background: black;
+    color: white;
+    margin: 10px 0px;
+}
+
+.advancements .node__line__before {
+    background: white;
+    width: 50px;
+    height: 5px;
+}
+
+.advancements .node__line {
+    background: white;
+    // box-shadow: 0px 3px black, 0px -3px black;
+    width: 50px;
+    height: 5px;
+}
+
+.advancements .node__children__line {
+    background: white;
+    // box-shadow: 3px 0px black, -3px 0px black;
+    width: 5px;
+    height: 100px;
+    // Height = (no of children * 37.5px[Half of Icon Height]) + ((no of children-1) * 20px[Top Padding + Bottom Padding]) + 10px(Hr Line Height) 
+}
+
+.advancements .node__children {
+    display: flex;
+    flex-direction: column;
+}
+
+.advancements .advancement-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+}
+
+.advancements .advancement-complete-frame {
+    background-image: url("../img/advancement-icons/Advancement_Complete.webp");
+}
+
+.advancements .advancement-incomplete-frame {
+    background-image: url("../img/advancement-icons/Advancement_Incomplete.webp");
+}
+
+.advancements .goal-complete-frame {
+    background-image: url("../img/advancement-icons/Goal_Complete.webp");
+}
+
+.advancements .goal-incomplete-frame {
+    background-image: url("../img/advancement-icons/Goal_Incomplete.webp");
+}
+
+.advancements .challenge-complete-frame {
+    background-image: url("../img/advancement-icons/Challenge_Complete.webp");
+}
+
+.advancements .challenge-incomplete-frame {
+    background-image: url("../img/advancement-icons/Challenge_Incomplete.webp");
+}
+
+.advancements .advancement-icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+// Nether Icons
+.advancements .nether-advancement-icon {
+    background-image: url("../img/advancement-icons/Red_Nether_Bricks.webp");
+}
+
+.advancements .return_to_sender-advancement-icon {
+    background-image: url("../img/advancement-icons/Fireball.webp");
+}
+
+.advancements .those_were_the_days-advancement-icon {
+    background-image: url("../img/advancement-icons/Polished_Blackstone_Bricks.webp");
+}
+
+.advancements .hidden_in_the_depths-advancement-icon {
+    background-image: url("../img/advancement-icons/Ancient_Debris.webp");
+}
+
+.advancements .subspace_bubble-advancement-icon {
+    background-image: url("../img/advancement-icons/Empty_Map.webp");
+}
+
+.advancements .a_terrible_fortress-advancement-icon {
+    background-image: url("../img/advancement-icons/Nether_Bricks.webp");
+}
+
+.advancements .who_is_cutting_onions-advancement-icon {
+    background-image: url("../img/advancement-icons/Crying_Obsidian.webp");
+}
+
+.advancements .oh_shiny-advancement-icon {
+    background-image: url("../img/advancement-icons/Gold_Ingot.webp");
+}
+
+.advancements .this_boat_has_legs-advancement-icon {
+    background-image: url("../img/advancement-icons/Warped_Fungus_On_A_Stick.webp");
+}
+
+.advancements .uneasy_alliance-advancement-icon {
+    background-image: url("../img/advancement-icons/Ghast_Tear.webp");
+}
+
+.advancements .war-pigs-advancement-icon {
+    background-image: url("../img/advancement-icons/Chest.webp");
+}
+
+.advancements .country_lode_take_me_home-advancement-icon {
+    background-image: url("../img/advancement-icons/Lodestone.webp");
+}
+
+.advancements .cover_me_in_debris-advancement-icon {
+    background-image: url("../img/advancement-icons/Netherite_Chestplate.webp");
+}

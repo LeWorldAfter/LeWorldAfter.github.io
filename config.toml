@@ -36,6 +36,6 @@ highlight_code = false
 [extra.advancements]
 nether = "img/advancement-icons/Red_Nether_Brick.webp"
 adventure = "img/advancement-icons/Empty_Map.webp"
-the-end = "img/advancement-icons/End_Stone.webp"
+end = "img/advancement-icons/End_Stone.webp"
 husbandry = "img/advancement-icons/Hay_Bale.webp"
 minecraft = "img/advancement-icons/Grass_Block.webp"

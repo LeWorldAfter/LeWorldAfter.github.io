@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block styling %} 
-<link rel="stylesheet" href="{{get_url(path='player.css', trailing_slash=false) }}"> 
+<link rel="stylesheet" href="{{get_url(path='player.css', trailing_slash=false) }}">
+<link rel="stylesheet" href="{{get_url(path='advancements.css', trailing_slash=false) }}"> 
 
 <!-- All stylings need in the html file -->
 <style>
@@ -253,20 +254,122 @@
             </label>
             <div class="tab">
                 <h2>Nether</h2>
-                <div class="container advancementSection" id="netherSection">
-
+                <div class="container overflow-auto advancementSection" id="netherSection">
+                    <!-- Add Nether Advancements Here -->
+                    <div class="node node--root">
+                        <div class="node__element">
+                            <div class="advancement-frame advancement-complete-frame">
+                                <div class="advancement-icon nether-advancement-icon"></div>
+                            </div>
+                        </div>
+                        <div class="node__line"></div>
+                        <div class="node__children__line"></div>
+                        <div class="node__children">
+                            <div class="node">
+                                <div class="node__line__before"></div>
+                                <div class="node__element">
+                                    <div class="advancement-frame challenge-incomplete-frame">
+                                        <div class="advancement-icon war-pigs-advancement-icon"></div>
+                                    </div>
+                                </div>
+                                <div class="node__line"></div>
+                                <div class="node__children__line"></div>
+                                <div class="node__children">
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame challenge-complete-frame">
+                                                <div class="advancement-icon country_lode_take_me_home-advancement-icon"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame goal-complete-frame">
+                                                <div class="advancement-icon cover_me_in_debris-advancement-icon"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="node">
+                                <div class="node__line__before"></div>
+                                <div class="node__element">
+                                    <div class="advancement-frame goal-incomplete-frame">
+                                        <div class="advancement-icon hidden_in_the_depths-advancement-icon"></div>
+                                    </div>
+                                </div>
+                                <div class="node__line"></div>
+                                <div class="node__children__line"></div>
+                                <div class="node__children">
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame challenge-complete-frame">
+                                                <div class="advancement-icon who_is_cutting_onions-advancement-icon"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame goal-complete-frame">
+                                                <div class="advancement-icon this_boat_has_legs-advancement-icon"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <input type="radio" id="tabAdventure" name="advancements">
             <label for="tabAdventure">
                 <img src="{{ get_url(path=config.extra.advancements.adventure) }}" alt = "Adventure"/>
             </label>
             <div class="tab">
                 <h2>Adventure</h2>
-                <div class="container advancementSection" id="adventureSection">
-
+                <div class="container overflow-auto advancementSection" id="adventureSection">
+                    <!-- Add Adventure Advancements Here -->
                 </div>
             </div>
+
+            <input type="radio" id="tabEnd" name="advancements">
+            <label for="tabEnd">
+                <img src="{{ get_url(path=config.extra.advancements.end) }}" alt = "The End"/>
+            </label>
+            <div class="tab">
+                <h2>The End</h2>
+                <div class="container overflow-auto advancementSection" id="endSection">
+                    <!-- Add End Advancements Here -->
+                </div>
+            </div>
+
+            <input type="radio" id="tabHusbandry" name="advancements">
+            <label for="tabHusbandry">
+                <img src="{{ get_url(path=config.extra.advancements.husbandry) }}" alt = "Husbandry"/>
+            </label>
+            <div class="tab">
+                <h2>Husbandry</h2>
+                <div class="container overflow-auto advancementSection" id="husbandrySection">
+                    <!-- Add Husbandry Advancements Here -->
+                </div>
+            </div>
+
+            <input type="radio" id="tabMinecraft" name="advancements">
+            <label for="tabMinecraft">
+                <img src="{{ get_url(path=config.extra.advancements.minecraft) }}" alt = "Minecraft"/>
+            </label>
+            <div class="tab">
+                <h2>Minecraft</h2>
+                <div class="container overflow-auto advancementSection" id="minecraftSection">
+                    <!-- Add Minecraft Advancements Here -->
+                </div>
+            </div>
+
         </div>
     </div>
 
