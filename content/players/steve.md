@@ -37,6 +37,13 @@ skin_img_2 = "img/player-img/steve-img/skins-img/Jerin_Original.png"
 skin_name_3 = "Herobrine"
 skin_img_3 = "img/player-img/steve-img/skins-img/Herobrine_Skin.png"
 
+[extra.json]
+advancement_nether = "../json/advancements-json/Steve/Steve_Advancements_Nether.json"
+advancement_adventure = "json/advancements-json/Steve/Steve_Advancements_Adventure.json"
+advancement_the_end = "../json/advancements-json/Steve/Steve_Advancements_The_End.json"
+advancement_husbandry = "../json/advancements-json/Steve/Steve_Advancements_Husbandry.json"
+advancement_minecraft = "../json/advancements-json/Steve/Steve_Advancements_Minecraft.json"
+
 [extra.advancements.nether]
 nether = "true"
 return-to-sender = "false"

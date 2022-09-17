@@ -256,7 +256,7 @@
                 <h2>Nether</h2>
                 <div class="container-fluid advancementSection" id="netherSection">
                     <!-- Add Nether Advancements Here -->
-                    <div class="node node--root">
+                    <!-- <div class="node node--root">
                         <div class="node__element">
                             <div class="advancement-frame advancement-complete-frame">
                                 <div class="advancement-icon nether-advancement-icon"></div>
@@ -378,7 +378,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -733,7 +733,15 @@
     });
 </script>
 
-<script src= {{ get_url(path="js/player.js") }}></script>
-<script src= {{ get_url(path="js/FileSaver.js") }}></script>
+<!-- Advancements Script -->
+<script id="advancementScript" 
+    src={{ get_url(path="js/advancements.js") }} 
+    type="module"
+    netherJsonParam={{ get_url(path=page.extra.json.advancement_nether) }} 
+    adventureJsonParam={{ get_url(path=page.extra.json.advancement_adventure) }}
+>
+</script>
+<script src={{ get_url(path="js/player.js") }}></script>
+<script src={{ get_url(path="js/FileSaver.js") }}></script>
 
 {% endblock %}
