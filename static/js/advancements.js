@@ -2,11 +2,14 @@ import netherJsonGlobal from '../json/advancements-json/Nether_Advancements.json
 import adventureJsonGlobal from '../json/advancements-json/Adventure_Advancements.json' assert {type: 'json'};
 import theEndJsonGlobal from '../json/advancements-json/The_End_Advancements.json' assert {type: 'json'};
 import husbandryJsonGlobal from '../json/advancements-json/Husbandry_Advancements.json' assert {type: 'json'};
+import minecraftJsonGlobal from '../json/advancements-json/Minecraft_Advancements.json' assert {type: 'json'};
+
 
 let netherJsonPath = document.getElementById('advancementScript').getAttribute('netherJsonParam');
 let adventureJsonPath = document.getElementById('advancementScript').getAttribute('adventureJsonParam');
 let theEndJsonPath = document.getElementById('advancementScript').getAttribute('theEndJsonParam');
 let husbandryJsonPath = document.getElementById('advancementScript').getAttribute('husbandryJsonParam');
+let minecraftJsonPath = document.getElementById('advancementScript').getAttribute('minecraftJsonParam');
 
 
 function getCompletion(amount, capacity) {
@@ -128,6 +131,13 @@ fetch(husbandryJsonPath)
 .then(res => res.json())
 .then(husbandryJson => {
     document.getElementById("husbandrySection").innerHTML = renderTree(husbandryJson, husbandryJsonGlobal)
+});
+
+// Minecraft Json File Mapping
+fetch(minecraftJsonPath)
+.then(res => res.json())
+.then(minecraftJson => {
+    document.getElementById("minecraftSection").innerHTML = renderTree(minecraftJson, minecraftJsonGlobal)
 });
 
 // Getting accurate height for lines

@@ -147,12 +147,12 @@ $minecraft-advancement-icon-size-small: 30px;
 }
 
 .advancements .node--root {
-    background: blue;
+    // background: blue;
     width: fit-content;
-    // height: auto;
-    padding: 25px;
-    margin: auto;
-    // position: relative;
+    padding-right: 625px;
+    padding-bottom: 200px;
+    margin-left: 250px;
+    // margin-top: 250px;
 }
 
 .advancements .node {
@@ -531,7 +531,7 @@ $minecraft-advancement-icon-size-small: 30px;
     background-image: url("../img/advancement-icons/Dragons_Breath.webp");
 }
 
-// The Husbandry Icons
+// Husbandry Icons
 .advancements .husbandry-advancement-icon {
     background-image: url("../img/advancement-icons/Hay_Bale.webp");
 }
@@ -622,4 +622,69 @@ $minecraft-advancement-icon-size-small: 30px;
 
 .advancements .serious_dedication-advancement-icon {
     background-image: url("../img/advancement-icons/Netherite_Hoe.webp");
+}
+
+// Minecraft Icons
+.advancements .minecraft-advancement-icon {
+    background-image: url("../img/advancement-icons/Grass_Block.webp");
+}
+
+.advancements .stone_age-advancement-icon {
+    background-image: url("../img/advancement-icons/Wooden_Pickaxe.webp");
+}
+
+.advancements .getting_an_upgrade-advancement-icon {
+    background-image: url("../img/advancement-icons/Stone_Pickaxe.webp");
+}
+
+.advancements .acquire_hardware-advancement-icon {
+    background-image: url("../img/advancement-icons/Iron_Ingot.webp");
+}
+
+.advancements .suit_up-advancement-icon {
+    background-image: url("../img/advancement-icons/Iron_Chestplate.webp");
+}
+
+.advancements .not_today_thank_you-advancement-icon {
+    background-image: url("../img/advancement-icons/Shield.webp");
+}
+
+.advancements .hot_stuff-advancement-icon {
+    background-image: url("../img/advancement-icons/Lava_Bucket.webp");
+}
+
+.advancements .ice_bucket_challenge-advancement-icon {
+    background-image: url("../img/advancement-icons/Obsidian.webp");
+}
+
+.advancements .we_need_to_go_deeper-advancement-icon {
+    background-image: url("../img/advancement-icons/Flint_and_Steel.webp");
+}
+
+.advancements .zombie_doctor-advancement-icon {
+    background-image: url("../img/advancement-icons/Golden_Apple.webp");
+}
+
+.advancements .eye_spy-advancement-icon {
+    background-image: url("../img/advancement-icons/Eye_of_Ender.webp");
+}
+
+.advancements .the_end_2-advancement-icon {
+    background-image: url("../img/advancement-icons/End_Stone.webp");
+}
+
+.advancements .isnt_it_iron_pick-advancement-icon {
+    background-image: url("../img/advancement-icons/Iron_Pickaxe.webp");
+}
+
+.advancements .diamonds-advancement-icon {
+    background-image: url("../img/advancement-icons/Diamond.webp");
+}
+
+.advancements .cover_me_with_diamonds-advancement-icon {
+    background-image: url("../img/advancement-icons/Diamond_Chestplate.webp");
+}
+
+.advancements .enchanter-advancement-icon {
+    background-image: url("../img/advancement-icons/Enchanted_Book.webp");
 }
