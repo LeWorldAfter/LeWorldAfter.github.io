@@ -34,7 +34,7 @@ highlight_code = false
 # Put all your custom variables here
 
 [extra.advancements]
-nether = "img/advancement-icons/Red_Nether_Brick.webp"
+nether = "img/advancement-icons/Red_Nether_Bricks.webp"
 adventure = "img/advancement-icons/Empty_Map.webp"
 end = "img/advancement-icons/End_Stone.webp"
 husbandry = "img/advancement-icons/Hay_Bale.webp"
