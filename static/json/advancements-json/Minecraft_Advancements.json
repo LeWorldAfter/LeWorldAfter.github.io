@@ -1,0 +1,14 @@
+{
+    "id": "minecraft",
+    "title": "Minecraft",
+    "description": "The heart and story of the game",
+    "type": "advancement",
+    "children": [
+        {
+            "id": "stone_age",
+            "title": "Stone Age",
+            "description": "Mine Stone with your new Pickaxe",
+            "type": "advancement"
+        }
+    ]
+}

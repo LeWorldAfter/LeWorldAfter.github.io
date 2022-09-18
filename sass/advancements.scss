@@ -238,6 +238,7 @@ $minecraft-advancement-icon-size-small: 30px;
     position: relative;
     background: $minecraft-advancement-body-color;
     font-size: 30px;
+    word-spacing: 5px;
     padding: 0px;
     width: fit-content;
     // height: 100px;
@@ -400,7 +401,7 @@ $minecraft-advancement-icon-size-small: 30px;
     background-image: url("../img/advancement-icons/Bucket.webp");
 }
 
-//Adventure Icons
+// Adventure Icons
 .advancements .adventure-advancement-icon {
     background-image: url("../img/advancement-icons/Empty_Map.webp");
 }
@@ -491,4 +492,134 @@ $minecraft-advancement-icon-size-small: 30px;
 
 .advancements .light_as_a_rabbit-advancement-icon {
     background-image: url("../img/advancement-icons/Leather_Boots.webp");
+}
+
+// The End Icons
+.advancements .the_end-advancement-icon {
+    background-image: url("../img/advancement-icons/End_Stone.webp");
+}
+
+.advancements .free_the_end-advancement-icon {
+    background-image: url("../img/advancement-icons/Dragon_Head.webp");
+}
+
+.advancements .the_next_generation-advancement-icon {
+    background-image: url("../img/advancement-icons/Dragon_Egg.webp");
+}
+
+.advancements .remote_getaway-advancement-icon {
+    background-image: url("../img/advancement-icons/Ender_Pearl.webp");
+}
+
+.advancements .the_city_at_the_end_of_the_game-advancement-icon {
+    background-image: url("../img/advancement-icons/Purpur_Block.webp");
+}
+
+.advancements .skys_the_limit-advancement-icon {
+    background-image: url("../img/advancement-icons/Elytra.webp");
+}
+
+.advancements .great_view_from_up_here-advancement-icon {
+    background-image: url("../img/advancement-icons/Shulker_Shell.webp");
+}
+
+.advancements .the_end_again-advancement-icon {
+    background-image: url("../img/advancement-icons/End_Crystal.webp");
+}
+
+.advancements .you_need_a_mint-advancement-icon {
+    background-image: url("../img/advancement-icons/Dragons_Breath.webp");
+}
+
+// The Husbandry Icons
+.advancements .husbandry-advancement-icon {
+    background-image: url("../img/advancement-icons/Hay_Bale.webp");
+}
+
+.advancements .bee_our_guest-advancement-icon {
+    background-image: url("../img/advancement-icons/Honey_Bottle.webp");
+}
+
+.advancements .wax_on-advancement-icon {
+    background-image: url("../img/advancement-icons/Honeycomb.webp");
+}
+
+.advancements .wax_off-advancement-icon {
+    background-image: url("../img/advancement-icons/Stone_Axe.webp");
+}
+
+.advancements .the_parrots_and_the_bats-advancement-icon {
+    background-image: url("../img/advancement-icons/Wheat.webp");
+}
+
+.advancements .two_by_two-advancement-icon {
+    background-image: url("../img/advancement-icons/Golden_Carrot.webp");
+}
+
+.advancements .youve_got_a_friend_in_me-advancement-icon {
+    background-image: url("../img/advancement-icons/Cookie.webp");
+}
+
+.advancements .birthday_song-advancement-icon {
+    background-image: url("../img/advancement-icons/Note_Block.webp");
+}
+
+.advancements .whatever_floats_your_goat-advancement-icon {
+    background-image: url("../img/advancement-icons/Oak_Boat.webp");
+}
+
+.advancements .best_friends_forever-advancement-icon {
+    background-image: url("../img/advancement-icons/Lead.webp");
+}
+
+.advancements .a_complete_catalogue-advancement-icon {
+    background-image: url("../img/advancement-icons/Raw_Cod.webp");
+}
+
+.advancements .glow_and_behold-advancement-icon {
+    background-image: url("../img/advancement-icons/Glow_Ink_Sac.webp");
+}
+
+.advancements .fishy_business-advancement-icon {
+    background-image: url("../img/advancement-icons/Fishing_Rod.webp");
+}
+
+.advancements .tactical_fishing-advancement-icon {
+    background-image: url("../img/advancement-icons/Bucket_of_Pufferfish.webp");
+}
+
+.advancements .the_cutest_predator-advancement-icon {
+    background-image: url("../img/advancement-icons/Bucket_of_Axolotl.webp");
+}
+
+.advancements .the_healing_power_of_friendship-advancement-icon {
+    background-image: url("../img/advancement-icons/Bucket_of_Tropical_Fish.webp");
+}
+
+.advancements .total_beelocation-advancement-icon {
+    background-image: url("../img/advancement-icons/Bee_Nest.webp");
+}
+
+.advancements .bukkit_bukkit-advancement-icon {
+    background-image: url("../img/advancement-icons/Bucket_of_Tadpole.webp");
+}
+
+.advancements .when_the_squad_hops_into_town-advancement-icon {
+    background-image: url("../img/advancement-icons/Lead.webp");
+}
+
+.advancements .with_our_powers_combined-advancement-icon {
+    background-image: url("../img/advancement-icons/Verdant_Froglight.webp");
+}
+
+.advancements .a_seedy_place-advancement-icon {
+    background-image: url("../img/advancement-icons/Wheat.webp");
+}
+
+.advancements .a_balanced_diet-advancement-icon {
+    background-image: url("../img/advancement-icons/Apple.webp");
+}
+
+.advancements .serious_dedication-advancement-icon {
+    background-image: url("../img/advancement-icons/Netherite_Hoe.webp");
 }

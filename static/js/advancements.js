@@ -1,8 +1,19 @@
 import netherJsonGlobal from '../json/advancements-json/Nether_Advancements.json' assert {type: 'json'};
 import adventureJsonGlobal from '../json/advancements-json/Adventure_Advancements.json' assert {type: 'json'};
+import theEndJsonGlobal from '../json/advancements-json/The_End_Advancements.json' assert {type: 'json'};
+import husbandryJsonGlobal from '../json/advancements-json/Husbandry_Advancements.json' assert {type: 'json'};
 
 let netherJsonPath = document.getElementById('advancementScript').getAttribute('netherJsonParam');
 let adventureJsonPath = document.getElementById('advancementScript').getAttribute('adventureJsonParam');
+let theEndJsonPath = document.getElementById('advancementScript').getAttribute('theEndJsonParam');
+let husbandryJsonPath = document.getElementById('advancementScript').getAttribute('husbandryJsonParam');
+
+
+function getCompletion(amount, capacity) {
+    return`
+    ${amount}/${capacity}
+    `
+}
 
 function addNodeElem(jsonFile, jsonFileGlobal) {
     let id = jsonFileGlobal.id;
@@ -12,7 +23,9 @@ function addNodeElem(jsonFile, jsonFileGlobal) {
     let capacity = jsonFileGlobal.capacity;
     let isComplete = jsonFile[id];
 
-    console.log(id, isComplete);
+    let completionPerc = 0;
+
+    let completionPercStyling;
 
     let completeString;
     if(isComplete === true)
@@ -20,6 +33,8 @@ function addNodeElem(jsonFile, jsonFileGlobal) {
     else if(isComplete === false)
         completeString = "incomplete";
     else{
+        completionPerc = (isComplete / capacity) * 100;
+        completionPercStyling = `style="background:linear-gradient(to right, #b98f2c ${completionPerc}%, #036a96 1px)"`
         if(capacity && isComplete >= capacity)
             completeString = "complete";
         else
@@ -32,8 +47,8 @@ function addNodeElem(jsonFile, jsonFileGlobal) {
                 <div class="advancement-icon ${id}-advancement-icon"></div>
             </div>
             <div class="container-fluid advancement-detailed">
-                <div class="advancement-banner ${completeString === "complete" ? "advancement-complete-banner" : ''}">
-                    ${title}
+                <div class="advancement-banner ${completeString === "complete" ? "advancement-complete-banner" : ''}" ${capacity ? completionPercStyling : ''}>
+                    ${title}${capacity ? getCompletion(isComplete, capacity) : ''}
                 </div>
                 <div class="advancement-body ${type === "challenge" ? "advancement-challenge-body" : ''}">
                     ${description}
@@ -76,18 +91,48 @@ fetch(netherJsonPath)
 .then(netherJson => {
     document.getElementById("netherSection").innerHTML = renderTree(netherJson, netherJsonGlobal)
 })
+.then(() => {
+    const advancementRadioElems = document.querySelector(".advancements").querySelectorAll("input[type=radio]");
+    const firstSectionElem = advancementRadioElems[0].nextElementSibling.nextElementSibling.querySelector(".advancementSection");
+    
+    getChildLineHeight(firstSectionElem);
+
+    Array.from(advancementRadioElems).forEach((radioElem, ind) => {
+        if(!ind)
+            return;
+        
+        let sectionElem = radioElem.nextElementSibling.nextElementSibling.querySelector(".advancementSection");
+    
+        radioElem.addEventListener("change", (e) => {
+            getChildLineHeight(sectionElem);
+        }, {once : true});
+    });
+});
 
 // Adventure Json File Mapping
 fetch(adventureJsonPath)
 .then(res => res.json())
 .then(adventureJson => {
     document.getElementById("adventureSection").innerHTML = renderTree(adventureJson, adventureJsonGlobal)
-})
+});
+
+// The End Json File Mapping
+fetch(theEndJsonPath)
+.then(res => res.json())
+.then(theEndJson => {
+    document.getElementById("endSection").innerHTML = renderTree(theEndJson, theEndJsonGlobal)
+});
+
+// Husbandry Json File Mapping
+fetch(husbandryJsonPath)
+.then(res => res.json())
+.then(husbandryJson => {
+    document.getElementById("husbandrySection").innerHTML = renderTree(husbandryJson, husbandryJsonGlobal)
+});
 
 // Getting accurate height for lines
 function getChildLineHeight(sectionElem) {
-    const frameHeight = 90
-    let childLineElems = sectionElem.getElementsByClassName("node__children__line");
+    let childLineElems = sectionElem.querySelectorAll(".node__children__line");
 
     Array.from(childLineElems).forEach(childLineElem => {
         let firstChildElem = childLineElem.nextElementSibling.firstElementChild.querySelector(".node__element");
@@ -113,18 +158,6 @@ function getChildLineHeight(sectionElem) {
         console.log("Height Diff: ", heightDiff);
     });
 }
-
-const advancementRadioElems = document.querySelector(".advancements").querySelectorAll("input[type=radio]");
-
-Array.from(advancementRadioElems).forEach(radioElem => {
-    let sectionElem = radioElem.nextElementSibling.nextElementSibling.querySelector(".advancementSection");
-
-    radioElem.addEventListener("change", (e) => {
-        getChildLineHeight(sectionElem);
-    }, {once : true});
-});
-
-getChildLineHeight(advancementRadioElems[0].nextElementSibling.nextElementSibling.querySelector(".advancementSection"));
 
 // Drag Functionality
 const advancementSections = document.querySelectorAll(".advancementSection");
@@ -164,3 +197,4 @@ Array.from(advancementSections).forEach(slider => {
         slider.scrollTop = scrollTop - walkY;
     });
 });
+
