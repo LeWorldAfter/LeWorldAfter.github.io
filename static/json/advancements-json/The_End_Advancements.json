@@ -1,0 +1,62 @@
+{
+    "id": "the_end",
+    "title": "The End",
+    "description": "Or the beginning?",
+    "type": "advancement",
+    "children": [
+        {
+            "id": "free_the_end",
+            "title": "Free the End",
+            "description": "Good Luck",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "the_next_generation",
+                    "title": "The Next Generation",
+                    "description": "Hold the Dragon Egg",
+                    "type": "goal"
+                },
+                {
+                    "id": "remote_getaway",
+                    "title": "Remote Getaway",
+                    "description": "Escape the island",
+                    "type": "advancement",
+                    "children": [
+                        {
+                            "id": "the_city_at_the_end_of_the_game",
+                            "title": "The City at the End of the Game",
+                            "description": "Go on in, what could happen?",
+                            "type": "advancement",
+                            "children": [
+                                {
+                                    "id": "skys_the_limit",
+                                    "title": "Sky's the Limit",
+                                    "description": "Find Elytra",
+                                    "type": "goal"
+                                },
+                                {
+                                    "id": "great_view_from_up_here",
+                                    "title": "Great View From Up Here",
+                                    "description": "Levitate up 50 blocks from the attacks of a Shulker",
+                                    "type": "challenge"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "the_end_again",
+                    "title": "The End... Again...",
+                    "description": "Respawn the Ender Dragon",
+                    "type": "goal"
+                },
+                {
+                    "id": "you_need_a_mint",
+                    "title": "You Need a Mint",
+                    "description": "Collect Dragon's Breath in a Glass Bottle",
+                    "type": "goal"
+                }
+            ]
+        }
+    ]
+}

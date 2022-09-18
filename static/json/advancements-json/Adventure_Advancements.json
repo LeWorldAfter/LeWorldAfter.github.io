@@ -1,0 +1,152 @@
+{
+    "id": "adventure",
+    "title": "Adventure",
+    "description": "Adventure, exploration and combat",
+    "type": "advancement",
+    "children": [
+        {
+            "id": "is_it_a_bird",
+            "title": "Is It a Bird?",
+            "description": "Look at a Parrot through a Spyglass",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "is_it_a_balloon",
+                    "title": "Is It a Balloon?",
+                    "description": "Look at a Ghast through a Spyglass",
+                    "type": "advancement"
+                }
+            ]
+        },
+        {
+            "id": "monster_hunter",
+            "title": "Monster Hunter",
+            "description": "Kill any hostile monster",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "a_throwaway_joke",
+                    "title": "A Throwaway Joke",
+                    "description": "Throw a Trident at something.<br>Note: Throwing away your only weapon is not a good idea",
+                    "type": "advancement"
+                },
+                {
+                    "id": "it_spreads",
+                    "title": "It Spreads",
+                    "description": "Kill a mob near a Sculk Catalyst",
+                    "type": "challenge"
+                },
+                {
+                    "id": "take_aim",
+                    "title": "Take Aim",
+                    "description": "Shoot something with an Arrow",
+                    "type": "advancement"
+                },
+                {
+                    "id": "monsters_hunted",
+                    "title": "Monsters Hunted",
+                    "description": "Kill one of every hostile monster",
+                    "type": "challenge",
+                    "capacity": 34
+                },
+                {
+                    "id": "postmortal",
+                    "title": "Postmortal",
+                    "description": "Use a Totem of Undying to cheat death",
+                    "type": "goal"
+                }
+            ]
+        },
+        {
+            "id": "what_a_deal",
+            "title": "What a Deal!",
+            "description": "Successfully trade with a Villager",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "hired_help",
+                    "title": "Hired Help",
+                    "description": "Summon an Iron Golem to help defend a village",
+                    "type": "goal"
+                },
+                {
+                    "id": "star_trader",
+                    "title": "Star Trader",
+                    "description": "Trade with a Villager at the build height limit",
+                    "type": "advancement"
+                }
+            ]
+        },
+        {
+            "id": "sticky_situation",
+            "title": "Sticky Situation",
+            "description": "Jump into a Honey Block to break your fall",
+            "type": "advancement"
+        },
+        {
+            "id": "ol_betsy",
+            "title": "Ol' Betsy",
+            "description": "Shoot a Crossbow",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "two_birds_one_arrow",
+                    "title": "Two Birds, One Arrow",
+                    "description": "Kill two Phantoms with a piercing Arrow",
+                    "type": "challenge"
+                },
+                {
+                    "id": "whos_the_pillager_now",
+                    "title": "Who's the Pillager Now?",
+                    "description": "Give a Pillager a taste of their own medicine",
+                    "type": "advancement"
+                }
+            ]
+        },
+        {
+            "id": "surge_protector",
+            "title": "Surge Protector",
+            "description": "Protect a Villager from an undesired shock without starting a fire",
+            "type": "advancement"
+        },
+        {
+            "id": "caves_and_cliffs",
+            "title": "Caves & Cliffs",
+            "description": "Free fall from the top of the world (build limit) to the bottom of the world and survive",
+            "type": "advancement"
+        },
+        {
+            "id": "sneak_100",
+            "title": "Sneak 100",
+            "description": "Sneak near a Sculk Sensor or Warden to prevent it form detecting you",
+            "type": "advancement"
+        },
+        {
+            "id": "sweet_dreams",
+            "title": "Sweet Dreams",
+            "description": "Sleep in a Bed to change your respawn point",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "adventuring_time",
+                    "title": "Adventuring Time",
+                    "description": "Discover every biome",
+                    "type": "challenge",
+                    "capacity": 52
+                },
+                {
+                    "id": "sound_of_music",
+                    "title": "Sound of Music",
+                    "description": "Make the Meadows come alive with the sound of music from a Jukebox",
+                    "type": "advancement"
+                },
+                {
+                    "id": "light_as_a_rabbit",
+                    "title": "Light as a Rabbit",
+                    "description": "Walk on Powder Snow...without sinking in it",
+                    "type": "advancement"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "id": "minecraft",
+    "title": "Minecraft",
+    "description": "The heart and story of the game",
+    "type": "advancement",
+    "children": [
+        {
+            "id": "stone_age",
+            "title": "Stone Age",
+            "description": "Mine Stone with your new Pickaxe",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "getting_an_upgrade",
+                    "title": "Getting an Upgrade",
+                    "description": "Construct a better Pickaxe",
+                    "type": "advancement",
+                    "children": [
+                        {
+                            "id": "acquire_hardware",
+                            "title": "Aquire Hardware",
+                            "description": "Smelt an Iron Ingot",
+                            "type": "advancement",
+                            "children": [
+                                {
+                                    "id": "suit_up",
+                                    "title": "Suit Up",
+                                    "description": "Protect yourself with a piece of iron armor",
+                                    "type": "advancement",
+                                    "children": [
+                                        {
+                                            "id": "not_today_thank_you",
+                                            "title": "Not Today, Thank You",
+                                            "description": "Deflect a projectile with a Shield",
+                                            "type": "advancement"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "hot_stuff",
+                                    "title": "Hot Stuff",
+                                    "description": "Fill a Bucket with lava",
+                                    "type": "advancement",
+                                    "children": [
+                                        {
+                                            "id": "ice_bucket_challenge",
+                                            "title": "Ice Bucket Challenge",
+                                            "description": "Obtain a block of Obsidian",
+                                            "type": "advancement",
+                                            "children": [
+                                                {
+                                                    "id": "we_need_to_go_deeper",
+                                                    "title": "We Need to Go Deeper",
+                                                    "description": "Build, light, and enter a Nether Portal",
+                                                    "type": "advancement",
+                                                    "children": [
+                                                        {
+                                                            "id": "zombie_doctor",
+                                                            "title": "Zombie Doctor",
+                                                            "description": "Weaken and then cure a Zombie Villager",
+                                                            "type": "goal"
+                                                        },
+                                                        {
+                                                            "id": "eye_spy",
+                                                            "title": "Eye Spy",
+                                                            "description": "Follow an Eye of Ender",
+                                                            "type": "advancement",
+                                                            "children": [
+                                                                {
+                                                                    "id": "the_end_2",
+                                                                    "title": "The End?",
+                                                                    "description": "Enter the End Portal",
+                                                                    "type": "advancement"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "isnt_it_iron_pick",
+                                    "title": "Isn't It Iron Pick",
+                                    "description": "Upgrade your Pickaxe",
+                                    "type": "advancement",
+                                    "children": [
+                                        {
+                                            "id": "diamonds",
+                                            "title": "Diamonds!",
+                                            "description": "Aquire diamonds",
+                                            "type": "advancement",
+                                            "children": [
+                                                {
+                                                    "id": "cover_me_with_diamonds",
+                                                    "title": "Cover Me with Diamonds",
+                                                    "description": "Diamond armor saves lives",
+                                                    "type": "advancement"
+                                                },
+                                                {
+                                                    "id": "enchanter",
+                                                    "title": "Enchanter",
+                                                    "description": "Enchant an item at an Enchanting Table",
+                                                    "type": "advancement"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -4,8 +4,6 @@ $page-color-text-hover: #66a374;
 
 $second-page-background-color: #edd6be;
 
-
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -13,6 +11,12 @@ $second-page-background-color: #edd6be;
 * {
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url("fonts/minecraft.ttf") format("truetype"),
+        url("fonts/minecraft.woff") format("woff");
 }
 
 @media (min-width: 1200px) {
@@ -32,7 +36,18 @@ $second-page-background-color: #edd6be;
     background-color: black !important;
 }
 
+// Main Parent of Player Page
+.player-page-main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
 // Background Slideshow Components
+.page-1-section {
+    scroll-snap-align: start;
+}
+
 .img-slideshow {
     height: 100vh !important;
     background-repeat: no-repeat;
@@ -41,7 +56,7 @@ $second-page-background-color: #edd6be;
     background-attachment: fixed;
 }
 
-.page-1-section {
+.page-1-section-main {
     height: 80vh;
 }
 
@@ -85,8 +100,11 @@ $second-page-background-color: #edd6be;
     color: $page-color-text;
 }
 
+
+//Page 2 Components
 .page-2-section {
     background-color: $second-page-background-color;
+    scroll-snap-align: center;
 }
 
 .card-section {
@@ -116,6 +134,7 @@ $second-page-background-color: #edd6be;
     background-color: #596223 !important;
 }
 
+// Page 3 Section
 .page-3-section {
     background-image: url("img/Builds_Page_cover.webp");
     height: 100vh !important;
@@ -124,6 +143,7 @@ $second-page-background-color: #edd6be;
     background-position: center;
     background-attachment: fixed;
     transition: all linear 0.2s;
+    scroll-snap-align: start;
 }
 
 .build-container {
@@ -195,9 +215,19 @@ $second-page-background-color: #edd6be;
     color: $page-color-text-hover  !important;
 }
 
+//Page 4 Section
+.page-4-section {
+    height: 100vh !important;
+    background-color: #363c49;
+    color: $page-color-text;
+    scroll-snap-align: start;
+}
+
+//Page 5 Section
 .page-5-section {
     height: 100vh !important;
     color: $page-color-text;
+    scroll-snap-align: start;
 }
 
 .skinOptionsSideBar {
