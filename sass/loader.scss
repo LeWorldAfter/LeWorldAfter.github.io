@@ -1,0 +1,45 @@
+#loader-orbit {
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    width: 150px;
+    height: 150px;
+    border: 2px #4A437F dashed;
+    border-radius: 100%;
+    -webkit-animation: spin-right 10s linear infinite;
+    animation: spin-right 10s linear infinite;
+  }
+  
+  #loader-l1 {
+    position: absolute;
+    top: -15%;
+    left: 35%;
+    height: 30%;
+    width: 30%;
+    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+  clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+    background-color: #9F98E6;
+    -webkit-animation: spin-left 10s linear infinite;
+    animation: spin-left 10s linear infinite;
+  }
+  /*
+  @keyframes spin-right {
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin-left {
+    100% {
+      -webkit-transform: rotate(-360deg);
+      -moz-transform: rotate(-360deg);
+      -ms-transform: rotate(-360deg);
+      -o-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
+  */
