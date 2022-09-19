@@ -10,28 +10,40 @@ $loader-curve: ease;
     -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     background-color: $color;
+    background: radial-gradient(circle, lighten($color, 20%), $color);
     -webkit-animation: spin-left $loader-speed $loader-curve infinite;
     animation: spin-left $loader-speed $loader-curve infinite;
 }
 
 #loader-container {
-    display: flex;
-    justify-content: center;
     position: absolute;
     width: 150px;
     height: 150px;
 }
 
-
+$loader-center-color: #5614ff;
 #loader-center {
     position: absolute;
     top: 75%;
     left: 75%;
     width: 50%;
     height: 50%;
-    background-color: #5614ff;
+    background-color: $loader-center-color;
+    background: radial-gradient(circle, lighten($loader-center-color, 15%), $loader-center-color);
     -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+    border-radius: 50%;
+    
+    
+}
+#loader-center-1 {
+    position: absolute;
+    top: 75%;
+    left: 75%;
+    box-shadow:
+      0 0 60px 30px #fff,  /* inner white */
+      0 0 100px 60px #f0f, /* middle magenta */
+      0 0 140px 90px #0ff; /* outer cyan */
 }
 
 
