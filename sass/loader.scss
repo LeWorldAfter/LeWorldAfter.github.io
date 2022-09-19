@@ -10,7 +10,7 @@ $loader-curve: ease;
     -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     background-color: $color;
-    background: radial-gradient(circle, lighten($color, 20%), $color);
+    background: radial-gradient(circle, lighten($color, 25%), $color);
     -webkit-animation: spin-left $loader-speed $loader-curve infinite;
     animation: spin-left $loader-speed $loader-curve infinite;
 }
@@ -32,19 +32,9 @@ $loader-center-color: #5614ff;
     background: radial-gradient(circle, lighten($loader-center-color, 15%), $loader-center-color);
     -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
-    border-radius: 50%;
-    
-    
+    border-radius: 50%;  
 }
-#loader-center-1 {
-    position: absolute;
-    top: 75%;
-    left: 75%;
-    box-shadow:
-      0 0 60px 30px #fff,  /* inner white */
-      0 0 100px 60px #f0f, /* middle magenta */
-      0 0 140px 90px #0ff; /* outer cyan */
-}
+
 
 
 #loader-orbit {
@@ -78,8 +68,20 @@ $loader-center-color: #5614ff;
     @include loader-shape(25%, -15%, #ff32f8);
 }
 
+.inner {
+    position: relative;
+    top: 15%;
+    left: 15%;
+    height: 70%;
+    width: 70%;
+    background: inherit;
+    filter:saturate(250%);
+    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+    clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+}
 
 
+/*
 @keyframes spin-right {
     100% {
         -webkit-transform: rotate(360deg);
