@@ -1,3 +1,20 @@
+$loader-speed: 1.25s;
+$loader-curve: ease; 
+
+@mixin loader-shape ($top, $left, $color){
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    top: $top;
+    left: $left;
+    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+  clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+    background-color: $color;
+    -webkit-animation: spin-left $loader-speed $loader-curve infinite;
+    animation: spin-left $loader-speed $loader-curve infinite;
+}
+
+
 #loader-orbit {
     position: absolute;
     top: 75px;
@@ -6,23 +23,36 @@
     height: 150px;
     border: 2px #4A437F dashed;
     border-radius: 100%;
-    -webkit-animation: spin-right 10s linear infinite;
-    animation: spin-right 10s linear infinite;
+    -webkit-animation: spin-right $loader-speed $loader-curve infinite;
+    animation: spin-right $loader-speed $loader-curve infinite;
+  }
+
+  #loader-inner {
+    
   }
   
   #loader-l1 {
-    position: absolute;
-    top: -15%;
-    left: 35%;
-    height: 30%;
-    width: 30%;
-    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
-  clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
-    background-color: #9F98E6;
-    -webkit-animation: spin-left 10s linear infinite;
-    animation: spin-left 10s linear infinite;
+    @include loader-shape(-15%, 35%, #ff0000e8); 
   }
-  /*
+
+  #loader-l2 {
+    @include loader-shape(25%, 85%, #ffbf00); 
+  }
+
+  #loader-l3 {
+    @include loader-shape(75%, 65%, #15ff00); 
+  }
+
+  #loader-l4 {
+    @include loader-shape(75%, 5%, #0073ff); 
+  }
+
+  #loader-l5 {
+    @include loader-shape(25%, -15%, #ff32f8); 
+  }
+
+  
+  
   @keyframes spin-right {
     100% {
       -webkit-transform: rotate(360deg);
@@ -42,4 +72,4 @@
       transform: rotate(-360deg);
     }
   }
-  */
+  
