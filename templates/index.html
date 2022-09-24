@@ -31,8 +31,10 @@
   <!-- TODO refactor this to it's own script and then to resource folder-->
   <script type="text/javascript">
 
-    window.onload = function () {
-      var piemenu = new wheelnav('piemenu');
+    var piemenu;
+
+    $(document).ready(function(){
+      piemenu  = new wheelnav('piemenu');
       piemenu.spreaderInTitle = icon.plus;
       piemenu.spreaderOutTitle = icon.cross;
       piemenu.spreaderRadius = piemenu.wheelRadius * 0.13;
@@ -42,11 +44,14 @@
       piemenu.selectedNavItemIndex = null;
       piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
       piemenu.initPercent = 0.1;
-      piemenu.createWheel();
+      console.log("hiiii");
       
-    };
+    });
+    
+    console.log("hi");
     $(window).on("load",function(){
      $("#loader-wrapper").fadeOut("slow");
+     piemenu.createWheel();
     });
   </script>
 
