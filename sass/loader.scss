@@ -31,8 +31,10 @@ $loader-curve: ease;
 
 #loader-container {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    height: 100%;
+    aspect-ratio: 1/1;
+    -webkit-transform: translate(-100%, -100%);
+    transform: translate(-100%, -100%);
 }
 
 $loader-center-color: #5614ff;
@@ -52,10 +54,10 @@ $loader-center-color: #5614ff;
 
 #loader-orbit {
     position: absolute;
-    top: 75px;
-    left: 75px;
-    width: 150px;
-    height: 150px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
     -webkit-animation: spin-right $loader-speed $loader-curve infinite;
     animation: spin-right $loader-speed $loader-curve infinite;
