@@ -1,14 +1,28 @@
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/// Main Loader
+/// 
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////  
+
 $loader-speed: 1.25s;
 $loader-curve: ease;
 
-@mixin loader-shape ($top, $left, $color) {
+//TODO- Better Naming
+//the clip path shape of the loader
+@mixin loader-shape {
+    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+    clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
+}
+
+//loaders attributes
+@mixin loader-attr ($top, $left, $color) {
+    @include loader-shape();
     position: absolute;
     height: 30%;
     width: 30%;
     top: $top;
     left: $left;
-    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
-    clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     background-color: $color;
     background: radial-gradient(circle, lighten($color, 25%), $color);
     -webkit-animation: spin-left $loader-speed $loader-curve infinite;
@@ -23,6 +37,7 @@ $loader-curve: ease;
 
 $loader-center-color: #5614ff;
 #loader-center {
+    @include loader-shape();
     position: absolute;
     top: 75%;
     left: 75%;
@@ -30,8 +45,6 @@ $loader-center-color: #5614ff;
     height: 50%;
     background-color: $loader-center-color;
     background: radial-gradient(circle, lighten($loader-center-color, 15%), $loader-center-color);
-    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
-    clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
     border-radius: 50%;  
 }
 
@@ -49,26 +62,27 @@ $loader-center-color: #5614ff;
 }
 
 #loader-l1 {
-    @include loader-shape(-15%, 35%, #ff0000e8);
+    @include loader-attr(-15%, 35%, #ff0000e8);
 }
 
 #loader-l2 {
-    @include loader-shape(25%, 85%, #ffbf00);
+    @include loader-attr(25%, 85%, #ffbf00);
 }
 
 #loader-l3 {
-    @include loader-shape(75%, 65%, #15ff00);
+    @include loader-attr(75%, 65%, #15ff00);
 }
 
 #loader-l4 {
-    @include loader-shape(75%, 5%, #0073ff);
+    @include loader-attr(75%, 5%, #0073ff);
 }
 
 #loader-l5 {
-    @include loader-shape(25%, -15%, #ff32f8);
+    @include loader-attr(25%, -15%, #ff32f8);
 }
 
 .inner {
+    @include loader-shape();
     position: relative;
     top: 15%;
     left: 15%;
@@ -76,12 +90,10 @@ $loader-center-color: #5614ff;
     width: 70%;
     background: inherit;
     filter:saturate(250%);
-    -webkit-clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
-    clip-path: polygon(50% 0%, 75% 25%, 75% 75%, 50% 100%, 25% 75%, 25% 25%);
 }
 
 
-/*
+
 @keyframes spin-right {
     100% {
         -webkit-transform: rotate(360deg);
@@ -100,4 +112,11 @@ $loader-center-color: #5614ff;
         -o-transform: rotate(-360deg);
         transform: rotate(-360deg);
     }
-}/**/
+}
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/// Block Loader
+/// 
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////  
