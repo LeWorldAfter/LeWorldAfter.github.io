@@ -44,13 +44,11 @@
       piemenu.selectedNavItemIndex = null;
       piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
       piemenu.initPercent = 0.1;
-      console.log("hiiii");
-      
     });
-    
-    console.log("hi");
-    $(window).on("load",function(){
+
+    $(window).on("load",async function(){
      $("#loader-wrapper").fadeOut("slow");
+     await new Promise(r => setTimeout(r, 2000));
      piemenu.createWheel();
     });
   </script>
@@ -95,9 +93,8 @@
     data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='60' data-wheelnav-cssmode
     data-wheelnav-init>
 
-    <div data-wheelnav-navitemimg="../resource/home_icons/players_icon.webp"><a href="{{get_url(path="
-        @/players/_index.md")}}"></a></div>
-    <div data-wheelnav-navitemimg="../resource/home_icons/shopping_icon.webp"></div>
+    <div data-wheelnav-navitemicon='steve'><a href="{{get_url(path="@/players/_index.md")}}"></a></div>
+    <div data-wheelnav-navitemicon='$'></div>
     <div data-wheelnav-navitemicon='crown'></div>
     <div data-wheelnav-navitemicon='globe'></div>
     <div data-wheelnav-navitemicon='book'></div>
