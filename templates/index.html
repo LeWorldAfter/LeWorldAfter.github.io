@@ -49,8 +49,9 @@
 
     $(window).on("load",async function(){
      $("#loader-wrapper").fadeOut("slow");
-     await new Promise(r => setTimeout(r, 2000));
+     await new Promise(r => setTimeout(r, 1000));
      piemenu.createWheel();
+     $("#loader-wrapper").remove();
     });
   </script>
 
