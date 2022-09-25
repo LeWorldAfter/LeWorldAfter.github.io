@@ -42,7 +42,9 @@
      //basic
      [class|=wheelnav-piemenu-slice-basic-#{$i}] {
          fill: nth($wheel-colors, $i + 1);
-         stroke: none;
+         fill-opacity: 50%;
+         stroke: #222;
+         stroke-width: 1%;
      }
 
      //on select
@@ -51,7 +53,8 @@
          fill: nth($wheel-colors, $i + 1);
          filter: brightness(150%);
          filter: saturate(200%);
-         stroke: none;
+         stroke: #222;
+         stroke-width: 1%;
 
      }
 
@@ -62,7 +65,8 @@
          filter: saturate(250%);
          fill-opacity: 0.7;
          cursor: pointer;
-         stroke: none;
+         stroke: #eee;
+         stroke-width: 1%;
      }
 
  }
