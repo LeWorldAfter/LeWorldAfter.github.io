@@ -1,3 +1,4 @@
+{% import "macros/loaders.html" as loaders %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,28 +60,7 @@
 
 <body>
   <div id="loader-wrapper">
-    <div id=loader-container>
-      <div id=loader-orbit>
-        <div id=loader-l1>
-          <div class=inner></div>
-        </div>
-        <div id=loader-l2>
-          <div class=inner></div>
-        </div>
-        <div id=loader-l3>
-          <div class=inner></div>
-        </div>
-        <div id=loader-l4>
-          <div class=inner></div>
-        </div>
-        <div id=loader-l5>
-          <div class=inner></div>
-        </div>
-      </div>
-      <div id=loader-center>
-        <div class=inner></div>
-      </div>
-    </div>
+    {{ loaders::crystal_loader() }}
   </div>
 
   <div id="particles-js"></div>
@@ -91,7 +71,7 @@
     data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='60' data-wheelnav-cssmode
     data-wheelnav-init>
 
-    <div data-wheelnav-navitemtext='steve'><a href="{{get_url(path="@/players/_index.md")}}"></a></div>
+    <div data-wheelnav-navitemicon='steve'><a href="{{get_url(path="@/players/_index.md")}}"></a></div>
     <div data-wheelnav-navitemicon='$'></div>
     <div data-wheelnav-navitemicon='crown'></div>
     <div data-wheelnav-navitemicon='globe'></div>
