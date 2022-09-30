@@ -74,19 +74,22 @@
 
  //titles
  [class|=wheelnav-piemenu-title-basic] {
-     fill: #333;
-     stroke: none;
+    //  fill: #333;
+    //  stroke: none;
+     filter: invert(16%) sepia(0%) saturate(8%) hue-rotate(252deg) brightness(100%) contrast(88%);
  }
 
  [class|=wheelnav-piemenu-title-selected] {
-     fill: #fff;
-     stroke: none;
+    //  fill: #fff;
+    //  stroke: none;
+     filter: invert(1);
  }
 
  [class|=wheelnav-piemenu-title-hover] {
-     fill: #222;
-     stroke: none;
+    //  fill: #222;
+    //  stroke: none;
      cursor: pointer;
+     filter: invert(10%) sepia(63%) saturate(0%) hue-rotate(196deg) brightness(105%) contrast(95%);
  }
 
  .wheelnav-piemenu-spreader-in,
