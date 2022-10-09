@@ -23,17 +23,23 @@
 
 $bg-image-num: 6;
 
-body::after{
-    position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1; // hide images
     //simple loop here to preload images 
     $bg-image-urls: null;
     //add icons to preload
     $bg-image-urls: $bg-image-urls url("../resource/home_icons/book_icon.svg") url("../resource/home_icons/calendar_icon.svg") url("../resource/home_icons/coin_icon.svg") url("../resource/home_icons/crown_icon.svg") url("../resource/home_icons/globe_icon.svg") url("../resource/home_icons/players_icon.svg");
+
     @for $i from 1 through $bg-image-num {
         $bg-image-urls: $bg-image-urls url("../resource/home_icons/bg#{$i}.webp");
     }
+
     content: $bg-image-urls;
- }
+}
 
 body {
     display: flex;
@@ -99,6 +105,26 @@ body {
         bottom: 0;
         right: 0;
     }
+
+    //toggle button
+    .toggle.wl-tggl .toggle-handle {
+        border: 1px solid #DCEFFF;
+        background: rgb(255, 255, 255);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.5) 100%) !important;
+    }
+
+    .toggle.wl-tggl {
+        font-variant: small-caps !important;
+    }
+
+    .toggle-on,
+    .toggle-off {
+        -webkit-box-shadow: inset 0px 0px 8px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: inset 0px 0px 8px 0px rgba(255, 255, 255, 0.5);
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 700 !important;
+    }
+
 
 
     @keyframes float-in {
