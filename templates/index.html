@@ -38,7 +38,7 @@
 
     var piemenu;
 
-    $(document).ready(function () {
+    function initPie() {
       piemenu = new wheelnav('piemenu');
       piemenu.spreaderInTitle = icon.plus;
       piemenu.spreaderOutTitle = icon.cross;
@@ -49,12 +49,46 @@
       piemenu.selectedNavItemIndex = null;
       piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
       piemenu.initPercent = 0.1;
+    }
+    function initPieItems(isIcons) {
+      if (isIcons == true) {
+        piemenu.initWheel(["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"]);
+      }
+      else {
+        ///Pie Menu Icons///
+        piemenu.initWheel(["imgsrc:../resource/home_icons/players_icon.svg",
+          "imgsrc:../resource/home_icons/coin_icon.svg",
+          "imgsrc:../resource/home_icons/crown_icon.svg",
+          "imgsrc:../resource/home_icons/globe_icon.svg",
+          "imgsrc:../resource/home_icons/book_icon.svg",
+          "imgsrc:../resource/home_icons/calendar_icon.svg"]);
+      }
+      ///Pie Menu Links///
+      const links = ["{{get_url(path="@/players/_index.md")}}",
+        "#",
+        "#",
+        "#",
+        "#",
+        "#"
+      ];
+      ///Pie Menu Tooltips///
       const tooltips = ["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"];
-      for (i = 0; i < 6; i++) { piemenu.navItems[i].tooltip = tooltips[i]; }
+      //adds them to the wheel
+      for (i = 0; i < 6; i++) {
+        piemenu.navItems[i].navigateHref = links[i];
+        piemenu.navItems[i].tooltip = tooltips[i];
+      }
+    }
+
+    //when the document is loaded init the wheel
+    $(document).ready(function () {
+      initPie();
+      initPieItems(true);
+      //wheel is created later
     });
 
-    function swtichInit(){
-      $( "#wl-tggl" ).bootstrapToggle({
+    function swtichInit() {
+      $("#wl-tggl").bootstrapToggle({
         on: 'Icon',
         off: 'Text',
         size: 'small',
@@ -72,6 +106,22 @@
       //creates the wheel
       piemenu.createWheel();
       $("#loader-wrapper").remove();
+    });
+
+    //listen to toggle button
+    $(function () {
+      $("#wl-tggl").change(function () {
+        var isIcons = $(this).prop('checked');
+        //disables the toggle button
+        $("#wl-tggl").bootstrapToggle('readonly');
+        //switches the icons
+        initPie();
+        initPieItems(isIcons);
+        piemenu.createWheel();
+        //enables the toggle button
+        $("#wl-tggl").bootstrapToggle('enable');
+
+      })
     });
   </script>
 
