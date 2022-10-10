@@ -22,6 +22,7 @@
 ///////////////////
 
 $bg-image-num: 6;
+$bg-icon-num: 11;
 
 body::after {
     position: absolute;
@@ -31,13 +32,17 @@ body::after {
     z-index: -1; // hide images
     //simple loop here to preload images 
     $bg-image-urls: null;
-    //add icons to preload
+    //add icons
     $bg-image-urls: $bg-image-urls url("../resource/home_icons/book_icon.svg") url("../resource/home_icons/calendar_icon.svg") url("../resource/home_icons/coin_icon.svg") url("../resource/home_icons/crown_icon.svg") url("../resource/home_icons/globe_icon.svg") url("../resource/home_icons/players_icon.svg");
-
+    //add bg images
     @for $i from 1 through $bg-image-num {
         $bg-image-urls: $bg-image-urls url("../resource/home_icons/bg#{$i}.webp");
     }
-
+    //add bg icons
+    @for $i from 1 through $bg-icon-num {
+        $bg-image-urls: $bg-image-urls url("../resource/home_icons/bg_icon#{$i}.webp");
+    }
+    //preload images
     content: $bg-image-urls;
 }
 
