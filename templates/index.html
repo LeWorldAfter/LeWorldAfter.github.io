@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Welcome to Le World After">
   <meta name="author" content="LWA group">
-  <link rel="stylesheet" href="{{get_url(path="home.css", trailing_slash=false) }}">
-  <link rel="stylesheet" href="{{get_url(path="loader.css", trailing_slash=false) }}">
-  <link rel="stylesheet" href="{{get_url(path="piemenu.css", trailing_slash=false) }}">
+  <link rel="stylesheet" href={{get_url(path="home.css" , trailing_slash=false) }}>
+  <link rel="stylesheet" href={{get_url(path="loader.css" , trailing_slash=false) }}>
+  <link rel="stylesheet" href={{get_url(path="piemenu.css" , trailing_slash=false) }}>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -26,7 +26,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
+  <!-- Scripts -->
   <script type="text/javascript" src="resource/wheelnav-js/raphael.min.js"></script>
   <script type="text/javascript" src="resource/wheelnav-js/raphael.icons.min.js"></script>
   <script type="text/javascript" src="resource/wheelnav-js/wheelnav.min.js"></script>
@@ -36,9 +36,28 @@
   <!-- TODO refactor this to it's own script and then to resource folder-->
   <script type="text/javascript">
 
-    var piemenu;
+    var piemenu; //main object
+    ///Pie Menu Titles///
+    const pieTitles = ["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"];
+    ///Pie Menu Icons///
+    const pieIcons = ["imgsrc:../resource/home_icons/players_icon.svg",
+      "imgsrc:../resource/home_icons/coin_icon.svg",
+      "imgsrc:../resource/home_icons/crown_icon.svg",
+      "imgsrc:../resource/home_icons/globe_icon.svg",
+      "imgsrc:../resource/home_icons/book_icon.svg",
+      "imgsrc:../resource/home_icons/calendar_icon.svg"];
+    ///Pie Menu Links///
+    const pieLinks = ["{{get_url(path="@/players/_index.md")}}",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"];
+    ///Pie Menu Tooltips///  same as titles, change if needed
+    const pieTooltips = pieTitles; // ["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"];
 
-    function initPie() {
+    function initPie(isText) {
+      //pie wheel settings
       piemenu = new wheelnav('piemenu');
       piemenu.spreaderInTitle = icon.plus;
       piemenu.spreaderOutTitle = icon.cross;
@@ -49,58 +68,29 @@
       piemenu.selectedNavItemIndex = null;
       piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
       piemenu.initPercent = 0.1;
-    }
-    function initPieItems(isIcons) {
-      if (isIcons == true) {
-        piemenu.initWheel(["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"]);
+      //pie navItems settings
+      if (isText == true) {
+        piemenu.initWheel(pieTitles); /*init with titles*/
       }
       else {
-        ///Pie Menu Icons///
-        piemenu.initWheel(["imgsrc:../resource/home_icons/players_icon.svg",
-          "imgsrc:../resource/home_icons/coin_icon.svg",
-          "imgsrc:../resource/home_icons/crown_icon.svg",
-          "imgsrc:../resource/home_icons/globe_icon.svg",
-          "imgsrc:../resource/home_icons/book_icon.svg",
-          "imgsrc:../resource/home_icons/calendar_icon.svg"]);
+        piemenu.initWheel(pieIcons); /*init with icons*/
       }
-      ///Pie Menu Links///
-      const links = ["{{get_url(path="@/players/_index.md")}}",
-        "#",
-        "#",
-        "#",
-        "#",
-        "#"
-      ];
-      ///Pie Menu Tooltips///
-      const tooltips = ["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"];
-      //adds them to the wheel
+      //adds links and tooltips to the wheel
       for (i = 0; i < 6; i++) {
-        piemenu.navItems[i].navigateHref = links[i];
-        piemenu.navItems[i].tooltip = tooltips[i];
+        piemenu.navItems[i].navigateHref = pieLinks[i];
+        piemenu.navItems[i].tooltip = pieTooltips[i];
       }
     }
 
-    //when the document is loaded init the wheel
+    //when the document is loaded init the wheel and toggle
     $(document).ready(function () {
-      initPie();
-      initPieItems(true);
-      //wheel is created later
+      initPie(true);
+      //createWheel() is called later
+      //init the switch with data
+      togglebtnInit();
     });
 
-    function swtichInit() {
-      $("#wl-tggl").bootstrapToggle({
-        on: 'Icon',
-        off: 'Text',
-        size: 'small',
-        onstyle: 'outline-info',
-        offstyle: 'outline-warning',
-        style: 'wl-tggl'
-      });
-    }
-
     $(window).on("load", async function () {
-      //init the switch with data
-      swtichInit();
       $("#loader-wrapper").fadeOut("slow");
       await new Promise(r => setTimeout(r, 1000));
       //creates the wheel
@@ -111,18 +101,29 @@
     //listen to toggle button
     $(function () {
       $("#wl-tggl").change(function () {
-        var isIcons = $(this).prop('checked');
+        var isText = $(this).prop('checked');
         //disables the toggle button
         $("#wl-tggl").bootstrapToggle('readonly');
         //switches the icons
-        initPie();
-        initPieItems(isIcons);
+        initPie(isText);
         piemenu.createWheel();
         //enables the toggle button
         $("#wl-tggl").bootstrapToggle('enable');
 
       })
     });
+
+    //helper function to init bootstrap toggle
+    function togglebtnInit() {
+      $("#wl-tggl").bootstrapToggle({
+        on: 'Icon',
+        off: 'Text',
+        size: 'small',
+        onstyle: 'outline-info',
+        offstyle: 'outline-warning',
+        style: 'wl-tggl'
+      });
+    }
   </script>
 
 </head>
@@ -140,7 +141,8 @@
     data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='60' data-wheelnav-cssmode
     data-wheelnav-init>
 
-    <div data-wheelnav-navitemimg='../resource/home_icons/players_icon.svg'><a href="{{get_url(path="@/players/_index.md")}}"></a></div>
+    <div data-wheelnav-navitemimg='../resource/home_icons/players_icon.svg'><a href="{{get_url(path="
+        @/players/_index.md")}}"></a></div>
     <div data-wheelnav-navitemimg='../resource/home_icons/coin_icon.svg'></div>
     <div data-wheelnav-navitemimg='../resource/home_icons/crown_icon.svg'></div>
     <div data-wheelnav-navitemimg='../resource/home_icons/globe_icon.svg'></div>
