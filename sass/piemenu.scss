@@ -92,6 +92,13 @@
      filter: invert(10%) sepia(63%) saturate(0%) hue-rotate(196deg) brightness(105%) contrast(95%);
  }
 
+ [class|=wheelnav-piemenu-title] > tspan {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
  .wheelnav-piemenu-spreader-in,
  .wheelnav-piemenu-spreader-out {
      fill: #444;
