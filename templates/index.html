@@ -84,19 +84,17 @@
 
     //when the document is loaded init the wheel and toggle
     $(document).ready(function () {
-      initPie(true);
+      initPie(true); // init the navwheel
       //createWheel() is called later
-      //init the switch with data
-      togglebtnInit();
+      togglebtnInit(); //init the toggle button with data
     });
 
     $(window).on("load", async function () {
-      $("#loader-wrapper").fadeOut("slow");
-      $("#logo_wrapper").load(window.location.href+" #logo_wrapper");
-      await new Promise(r => setTimeout(r, 1000));
-      //creates the wheel
-      piemenu.createWheel();
-      $("#loader-wrapper").remove();
+      $("#loader-wrapper").fadeOut("slow");  //fade out loader
+      $("#logo_wrapper").load(window.location.href+" #logo_wrapper"); //reload logo for animation
+      await new Promise(r => setTimeout(r, 1000)); //wait 1000ms
+      piemenu.createWheel(); //creates the wheel
+      $("#loader-wrapper").remove(); //remove the loader div
     });
 
     //listen to toggle button
