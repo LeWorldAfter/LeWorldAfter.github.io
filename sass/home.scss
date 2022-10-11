@@ -51,6 +51,9 @@ body {
     justify-content: center;
     align-items: center;
 
+    #logo_wrapper {
+        display:contents;
+    }
     #logo {
         width: 75%;
         padding: 50px 10px 50px 10px;

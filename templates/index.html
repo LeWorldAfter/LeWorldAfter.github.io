@@ -92,6 +92,7 @@
 
     $(window).on("load", async function () {
       $("#loader-wrapper").fadeOut("slow");
+      $("#logo_wrapper").load(window.location.href+" #logo_wrapper");
       await new Promise(r => setTimeout(r, 1000));
       //creates the wheel
       piemenu.createWheel();
@@ -134,7 +135,7 @@
   </div>
 
   <div id="particles-js"></div>
-  <img src="resource/home_icons/lwa_logo_anim.gif" alt="LWA Logo" id="logo">
+  <div id="logo_wrapper"><img src="resource/home_icons/lwa_logo_anim.gif" alt="LWA Logo" id="logo"></div>
   <div id="wheelDiv"></div>
   <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
     data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
