@@ -1,6 +1,6 @@
 +++
-title = "Wonder LWA" 
-sort_by = "date" 
-template = "loader.html" 
-page_template = "loader.html" 
+title = "Wonder LWA"
+sort_by = "date"
+template = "Entertainment-Template/entertainment-home.html"
+page_template = "Entertainment-Template/entertainment-object.html"
 +++

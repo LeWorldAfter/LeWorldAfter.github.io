@@ -1,0 +1,282 @@
+$page-color: #243C4E;
+$page-color-text: #D3FBDC;
+$page-color-text-hover: #66a374;
+
+$second-page-background-color: #edd6be;
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url("fonts/minecraft.ttf") format("truetype"),
+        url("fonts/minecraft.woff") format("woff");
+}
+
+@media (min-width: 1200px) {
+    .player-description {
+        font-size: 20px;
+    }
+}
+
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+@media (max-width: 1199.98px) {
+    .player-description {
+        font-size: 15px;
+    }
+}
+
+.test-container {
+    background-color: black !important;
+}
+
+// Main Parent of Player Page
+.player-page-main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+// Background Slideshow Components
+.page-1-section {
+    scroll-snap-align: start;
+}
+
+.img-slideshow {
+    height: 100vh !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.page-1-section-main {
+    height: 80vh;
+}
+
+// Profile Pic Components 
+.img-container {
+    width: fit-content !important;
+}
+
+.img-profile-pic-frame {
+    padding: 10px;
+    width: fit-content !important;
+    background-color: $page-color  !important;
+    border-radius: 10px !important;
+    margin: 20px;
+}
+
+.img-profile-pic {
+    width: 20vh;
+    background-color: #b37640;
+    border-radius: 10px;
+}
+
+
+// Player Title Components 
+.player-title-container {
+    width: fit-content !important;
+}
+
+.player-title-card {
+    background-color: $page-color  !important;
+    width: fit-content !important;
+    border-radius: 20px !important;
+    margin: 20px;
+}
+
+.player-title {
+    color: $page-color-text;
+}
+
+.player-doj {
+    color: $page-color-text;
+}
+
+
+//Page 2 Components
+.page-2-section {
+    background-color: $second-page-background-color;
+    scroll-snap-align: center;
+}
+
+.card-section {
+    margin: 50px;
+}
+
+.player-description-card {
+    width: 40rem;
+    border-radius: 20px !important;
+    height: 40vh !important;
+}
+
+.player-description {
+    color: $page-color-text;
+    text-align: center !important;
+}
+
+.card-1 {
+    background-color: #7B7554 !important;
+}
+
+.card-2 {
+    background-color: #826251 !important;
+}
+
+.card-3 {
+    background-color: #596223 !important;
+}
+
+// Page 3 Section
+.page-3-section {
+    background-image: url("img/Builds_Page_cover.webp");
+    height: 100vh !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: all linear 0.2s;
+    scroll-snap-align: start;
+}
+
+.build-container {
+    height: 100vh;
+}
+
+.bases-card {
+    background-color: $page-color  !important;
+    width: 30vw;
+    height: 15vw !important;
+    border-radius: 2vw !important;
+    margin: 20px;
+    margin-top: 30px;
+    color: $page-color-text  !important;
+}
+
+.bases-title {
+    font-size: 3vw;
+}
+
+.base-carousel-section {
+    margin-top: 1.5vw !important;
+}
+
+.base-carousel-item {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.base-carousel-item>a {
+    text-decoration: none !important;
+    color: $page-color-text  !important;
+}
+
+.base-carousel-item>a:hover {
+    color: $page-color-text-hover  !important;
+}
+
+.shops-card {
+    background-color: $page-color  !important;
+    width: 30vw;
+    height: 15vw !important;
+    border-radius: 2vw !important;
+    margin: 20px;
+    margin-top: 30px;
+    color: $page-color-text  !important;
+}
+
+.shops-title {
+    font-size: 3vw;
+}
+
+.shop-carousel-section {
+    margin-top: 1.5vw !important;
+}
+
+.shop-carousel-item {
+    text-align: center;
+    font-size: 2vw;
+
+}
+
+.shop-carousel-item>a {
+    text-decoration: none !important;
+    color: $page-color-text  !important;
+}
+
+.shop-carousel-item>a:hover {
+    color: $page-color-text-hover  !important;
+}
+
+//Page 4 Section
+.page-4-section {
+    height: 100vh !important;
+    background-color: #363c49;
+    color: $page-color-text;
+    scroll-snap-align: start;
+}
+
+//Page 5 Section
+.page-5-section {
+    height: 100vh !important;
+    color: $page-color-text;
+    scroll-snap-align: start;
+}
+
+.skinOptionsSideBar {
+    width: 250px;
+    height: 100vh;
+    // position: fixed;
+    background-color: #826251;
+    margin-left: -250px;
+    transition: 0.4s;
+}
+
+.active-sidebar {
+    margin-left: 0px;
+}
+
+.skinOptions {
+    margin: 10px;
+}
+
+.toggle-container {
+    margin-top: 20px !important;
+}
+
+.skin-edit-btn {
+    background-color: #826251 !important;
+    border-color: #664c3f !important;
+    color: $page-color-text  !important;
+}
+
+.skin-edit-btn:hover {
+    background-color: #755748 !important;
+}
+
+.skin-edit-btn:focus {
+    box-shadow: 0 0 0 3px rgba(170, 133, 114, 0.5) !important;
+}
+
+.skinMainPage {
+    margin: 20px;
+}
+
+#carouselSkins {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: $page-color;
+}
+
+.skin-item {
+    // width: fit-content !important;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
