@@ -1,0 +1,34 @@
+{% macro crystal_loader() %}
+<link rel="stylesheet" href="{{get_url(path="loader.css", trailing_slash=false) }}">
+<div id=loader-container>
+    <div id=loader-orbit>
+        <div id=loader-l1>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l2>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l3>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l4>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l5>
+            <div class=inner></div>
+        </div>
+    </div>
+    <div id=loader-center>
+        <div class=inner></div>
+    </div>
+</div>
+{% endmacro crystal_loader %}
+
+{% macro block_loader() %}
+<link rel="stylesheet" href="{{get_url(path="loader.css", trailing_slash=false) }}">
+<div id="loader2-container">
+    <div id="l1" class="fader"></div>
+    <div id="l2" class="fader"></div>
+    <i id="ico" class="bi bi-box"></i>
+</div>
+{% endmacro block_loader %}
