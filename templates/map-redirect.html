@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url={{get_url(path='resource/map/view/', trailing_slash=false) }}" />
+  <title>Le World After Map</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+    }
+    .message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .redirect {
+      font-size: 18px;
+      text-decoration: none;
+      color: #6b6bff;
+      transition: color 0.3s ease;
+    }
+    .redirect:hover {
+      color: #4d4dff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message">
+      <p>Redirecting you to the official Le World After Server Map...</p>
+    </div>
+    <a href="{{get_url(path='resource/map/view/', trailing_slash=false) }}" class="redirect">Click here if you are not redirected</a>
+  </div>
+</body>
+</html>
