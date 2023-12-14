@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Styling Section -->
+   
+<link rel="stylesheet" href="https://leworldafter.github.io/player.css">
+<link rel="stylesheet" href="https://leworldafter.github.io/advancements.css"> 
+
+<!-- All stylings need in the html file -->
+<style>
+   
+.img-slideshow{
+    animation: animate 16s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%{
+        background-image: url("https://leworldafter.github.io/img/player-img/steve-img/background-img/Steve_Cover_Pic-1.webp");
+    }
+    33%{
+        background-image: url("https://leworldafter.github.io/img/player-img/steve-img/background-img/Steve_Cover_Pic-2.webp");
+    }
+    66%{
+        background-image: url("https://leworldafter.github.io/img/player-img/steve-img/background-img/Steve_Cover_Pic-3.webp");
+    }
+}
+
+</style>
+
+
+  <!-- End of Styling Section -->
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>Le World After</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+  <!-- add hamburger menu based on screen width -->
+  <script>
+    window.addEventListener("resize", () => {
+      const navbar = document.getElementById("navbar");
+      if (window.innerWidth < 576) navbar.classList.remove("navbar-expand");
+      else navbar.classList.add("navbar-expand");
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      window.dispatchEvent(new Event('resize'));
+    });
+  </script>
+
+  
+
+
+
+  <!-- Main Content Section -->
+  
+
+<div class="container-fluid p-0 player-page-main">
+
+    <!-- Background Image Slideshow -->
+    <div class="container-fluid p-0 img-slideshow page-1-section">
+        <!-- Added navbar here -->
+        <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Le World After</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://leworldafter.github.io/players">Players</a></li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Server
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="https://leworldafter.github.io/player-bases">Bases</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page-1 in the background slideshow -->
+        <div class="container position-relative page-1-section-main">
+            <div class = "container p-0 position-absolute top-0 start-0 img-container">
+                <div class = "card img-profile-pic-frame">
+                    <img src="https://leworldafter.github.io/img/catwhat.webp" class="img-profile-pic" alt="Mr_Patcher">
+                </div>
+            </div>
+            <div class = "container p-0 position-absolute bottom-0 end-0 player-title-container">
+                <div class = "card player-title-card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center player-title">Mr_Patcher</h1>
+                        <p class="card-text text-end player-doj">
+                            Joined the server on:<br>
+                            Somewhere around the birth of server
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Carousel -->
+    <div class="container-fluid bg-dark page-2-section">
+        <div id="carouselIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container d-flex justify-content-center card-section">
+                        <div class = "card player-description-card card-1">
+                            <div class="card-body overflow-auto">
+                                <h1 class="card-title text-start player-title">Mr_Patcher</h1>
+                                <div class="card-text text-start player-description">
+                                    Patcher builds a lot of maps and has a lot of farms. He has a big base too, but he never gives his farms or his base to other people. Clearly he doesnt believe in communism and is for capitalism and making the poor people poorer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container d-flex justify-content-center card-section">
+                        <div class = "card player-description-card card-2">
+                            <div class="card-body overflow-auto">
+                                <h1 class="card-title text-start player-title">Hobbies</h1>
+                                <div class="card-text text-start player-description">
+                                    <ul>
+                                        <li>Building farms and maps</li>
+                                        <li>Not buying anything from Jerin&#x27;s Shop</li>
+                                        <li>Did I mention building farms and maps</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container d-flex justify-content-center card-section">
+                        <div class = "card player-description-card card-3">
+                            <div class="card-body overflow-auto">
+                                <h1 class="card-title text-start player-title">Competitions Won</h1>
+                                <div class="card-text text-start player-description">
+                                    <ul>
+                                        <li>Most Farms build</li>
+                                        <li>Largest Map Collection</li>
+                                        <li>Shadow&#x27;s Easter Egg Hunt</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Builds Page (Bases and Shops) -->
+    <div class="container-fluid p-0 page-3-section">
+        <div class="container position-relative build-container">
+
+            <!-- Bases Card -->
+            <div class = "card position-absolute top-0 start-0 bases-card">
+                <div class="card-body">
+                    <h1 class="card-title text-start bases-title">Bases</h1>
+                    <!-- Base Carousel -->
+                    <div class="container base-carousel-section">
+                        <div id="carouselBasesControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                
+                                <div id = "base-item-1" class="carousel-item active base-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Castle Base</a>
+                                </div>
+                                
+
+                                
+
+                                
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBasesControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselBasesControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shops Card -->
+            <div class = "card position-absolute bottom-0 end-0 shops-card">
+                <div class="card-body">
+                    <h1 class="card-title text-start shops-title">Shops</h1>
+                    <!-- Shop Carousel -->
+                    <div class="container shop-carousel-section">
+                        <div id="carouselShopsControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                
+                                <div id = "shop-item-1" class="carousel-item active shop-carousel-item">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Wheat Shop</a>
+                                </div>
+                                
+
+                                
+
+                                
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselShopsControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselShopsControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advancement Page -->
+    <div class="container-fluid p-0 overflow-auto page-4-section">
+        <div class="container fs-1 text-center">Advancements</div>
+        <div class="container advancements">
+            <input type="radio" id="tabNether" name="advancements" checked="checked">
+            <label for="tabNether">
+                <img src="https://leworldafter.github.io/img/advancement-icons/Red_Nether_Bricks.webp" alt = "Nether"/>
+            </label>
+            <div class="tab">
+                <h2>Nether</h2>
+                <div class="container-fluid advancementSection" id="netherSection">
+                    <!-- Add Nether Advancements Here -->
+                    <!-- <div class="node node--root">
+                        <div class="node__element">
+                            <div class="advancement-frame advancement-complete-frame">
+                                <div class="advancement-icon nether-advancement-icon"></div>
+                            </div>
+                            <div class="container-fluid advancement-detailed">
+                                <div class="advancement-banner advancement-complete-banner">
+                                    Nether
+                                </div>
+                                <div class="advancement-body advancement-challenge-body">
+                                    Bring summer clothes
+                                </div>
+                            </div>
+                        </div>
+                        <div class="node__line"></div>
+                        <div class="node__children__line"></div>
+                        <div class="node__children">
+                            <div class="node">
+                                <div class="node__line__before"></div>
+                                <div class="node__element">
+                                    <div class="advancement-frame challenge-incomplete-frame">
+                                        <div class="advancement-icon withering_heights-advancement-icon"></div>
+                                    </div>
+                                    <div class="container-fluid advancement-detailed">
+                                        <div class="advancement-banner">
+                                            Withering Heights
+                                        </div>
+                                        <div class="advancement-body">
+                                            Summon the Wither
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="node__line"></div>
+                                <div class="node__children__line"></div>
+                                <div class="node__children">
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame challenge-complete-frame">
+                                                <div class="advancement-icon local_brewery-advancement-icon"></div>
+                                            </div>
+                                            <div class="container-fluid advancement-detailed">
+                                                <div class="advancement-banner advancement-complete-banner">
+                                                    Local Brewery
+                                                </div>
+                                                <div class="advancement-body">
+                                                    Brew a Potion
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame goal-complete-frame">
+                                                <div class="advancement-icon bring_home_the_beacon-advancement-icon"></div>
+                                            </div>
+                                            <div class="container-fluid advancement-detailed">
+                                                <div class="advancement-banner">
+                                                    Bring Home the Beacon
+                                                </div>
+                                                <div class="advancement-body">
+                                                    Construct and place a Beacon
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="node">
+                                <div class="node__line__before"></div>
+                                <div class="node__element">
+                                    <div class="advancement-frame goal-incomplete-frame">
+                                        <div class="advancement-icon a_furious_cocktail-advancement-icon"></div>
+                                    </div>
+                                    <div class="container-fluid advancement-detailed">
+                                        <div class="advancement-banner advancement-complete-banner">
+                                            A Furious Cocktail
+                                        </div>
+                                        <div class="advancement-body advancement-challenge-body">
+                                            Have every potion effect applied at the same time
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="node__line"></div>
+                                <div class="node__children__line"></div>
+                                <div class="node__children">
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame challenge-complete-frame">
+                                                <div class="advancement-icon beaconator-advancement-icon"></div>
+                                            </div>
+                                            <div class="container-fluid advancement-detailed">
+                                                <div class="advancement-banner advancement-complete-banner">
+                                                    Beaconator
+                                                </div>
+                                                <div class="advancement-body">
+                                                    Bring a Beacon to full power
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="node">
+                                        <div class="node__line__before"></div>
+                                        <div class="node__element">
+                                            <div class="advancement-frame goal-complete-frame">
+                                                <div class="advancement-icon how_did_we_get_here-advancement-icon"></div>
+                                            </div>
+                                            <div class="container-fluid advancement-detailed">
+                                                <div class="advancement-banner advancement-complete-banner">
+                                                    How Did We Get Here?
+                                                </div>
+                                                <div class="advancement-body advancement-challenge-body">
+                                                    Have every effect applied at the same time
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <input type="radio" id="tabAdventure" name="advancements">
+            <label for="tabAdventure">
+                <img src="https://leworldafter.github.io/img/advancement-icons/Empty_Map.webp" alt = "Adventure"/>
+            </label>
+            <div class="tab">
+                <h2>Adventure</h2>
+                <div class="container advancementSection" id="adventureSection">
+                    <!-- Add Adventure Advancements Here -->
+                </div>
+            </div>
+
+            <input type="radio" id="tabEnd" name="advancements">
+            <label for="tabEnd">
+                <img src="https://leworldafter.github.io/img/advancement-icons/End_Stone.webp" alt = "The End"/>
+            </label>
+            <div class="tab">
+                <h2>The End</h2>
+                <div class="container advancementSection" id="endSection">
+                    <!-- Add End Advancements Here -->
+                </div>
+            </div>
+
+            <input type="radio" id="tabHusbandry" name="advancements">
+            <label for="tabHusbandry">
+                <img src="https://leworldafter.github.io/img/advancement-icons/Hay_Bale.webp" alt = "Husbandry"/>
+            </label>
+            <div class="tab">
+                <h2>Husbandry</h2>
+                <div class="container advancementSection" id="husbandrySection">
+                    <!-- Add Husbandry Advancements Here -->
+                </div>
+            </div>
+
+            <input type="radio" id="tabMinecraft" name="advancements">
+            <label for="tabMinecraft">
+                <img src="https://leworldafter.github.io/img/advancement-icons/Grass_Block.webp" alt = "Minecraft"/>
+            </label>
+            <div class="tab">
+                <h2>Minecraft</h2>
+                <div class="container advancementSection" id="minecraftSection">
+                    <!-- Add Minecraft Advancements Here -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Skin Page -->
+    <div class="container-fluid p-0 d-flex bg-dark page-5-section">
+
+        <!-- Skin Edit Sidebar -->
+        <div class="overflow-auto skinOptionsSideBar" id="skinSideBar">
+            <div class="container skinOptions">
+                <h1 class="fs-2">Skin Edit</h1>
+                <div class = "container row toggle-container">
+                    <h5 class="fs-5">Top and Body</h5>
+                    <hr/>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input partToggle" type="checkbox" id="hat" checked>
+                        <label class="form-check-label" for="hat">Hat</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input partToggle" type="checkbox" id="jacket" checked>
+                        <label class="form-check-label" for="jacket">Jacket</label>
+                    </div>
+                </div>
+                <div class="container row toggle-container">
+                    <h5 class="fs-5">Arms</h5>
+                    <hr/>
+                    <div class="form-check form-switch">
+                    <input class="form-check-input partToggle" type="checkbox" id="leftSleeve" checked>
+                    <label class="form-check-label" for="leftSleeve">Left Sleeve</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input partToggle" type="checkbox" id="rightSleeve" checked>
+                        <label class="form-check-label" for="rightSleeve">Right Sleeve</label>
+                    </div>
+                </div>
+                <div class="container row toggle-container">
+                    <h5 class="fs-5">Legs</h5>
+                    <hr/>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input partToggle" type="checkbox" id="leftTrousers" checked>
+                        <label class="form-check-label" for="leftTrousers">Left Trousers</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input partToggle" type="checkbox" id="rightTrousers" checked>
+                        <label class="form-check-label" for="rightTrousers">Right Trousers</label>
+                    </div>
+                </div>
+                <div class="container row toggle-container">
+                    <h5 class="fs-5">Cape</h5>
+                    <hr/>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input partToggle" type="checkbox" id="cape" checked>
+                        <label class="form-check-label" for="cape">Cape</label>
+                    </div>
+                </div>
+                <div class="container row toggle-container">
+                    <h5 class="fs-5">Size and Motion</h5>
+                    <hr/>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="animate" checked>
+                        <label class="form-check-label" for="animate">Animate</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="slim">
+                        <label class="form-check-label" for="slim">Slim</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Skin Page -->
+        <div class="container-fluid p-0 overflow-auto skinMainPage">
+            <div class="container fs-1 text-center ">Skins</div>
+
+            <div class="container-fluid">
+                <button type="button" class="btn btn-light skin-edit-btn" id="skinEditBtn">Edit Skin</button>
+            </div>
+
+            <div id="carouselSkins" class="carousel slide">
+                <div class="carousel-indicators">
+                    
+                    <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    
+
+                    
+                    <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    
+
+                    
+                    <button type="button" data-bs-target="#carouselSkins" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    
+                </div>
+                <div class="carousel-inner" id="skinCarouselInner" >
+                    
+                    <div class="carousel-item active">
+                        <div id="skin-item-1" class="container d-flex justify-content-center align-items-center skin-item">
+                            
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Steve</h5>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="carousel-item">
+                        <div id="skin-item-2" class="container d-flex justify-content-center skin-item">
+
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Jerin Original</h5>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="carousel-item">
+                        <div id="skin-item-3" class="container d-flex justify-content-center skin-item">
+
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Herobrine</h5>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSkins" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselSkins" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="container text-center">
+                <button type="button" class="btn btn-primary" id="downloadBtn">Download</button>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+
+  <!-- End of Main Content Section -->
+
+  <!-- Script Section -->
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js" integrity="sha256-NGC9JEuTWN4GhTj091wctgjzftr+8WNDmw0H8J5YPYE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
+
+<!-- Skin Script -->
+<script>
+    function renderSkin(elemItem, imgUrl){
+        var skinRender = new SkinRender({
+            // autoResize: true,
+            render: {
+                taa: true
+            },
+            controls: {
+                zoom: false,
+                pan: false
+            },
+            canvas: {
+                width: 500,
+                height: 300
+            },
+            pauseHidden: false,
+            makeNonTransparentOpaque: false
+        }, elemItem);
+
+        skinRender.render({
+            url: imgUrl,
+            capeUrl: 'https://leworldafter.github.io/img/Migrator_Cape.png'
+        });
+
+        $("#slim").on("change", function() {
+            skinRender.clearScene();
+
+            var slim =  $("#slim").is(":checked");
+            var options = {};
+
+            options.url = imgUrl;
+            options.capeUrl = 'https://leworldafter.github.io/img/Migrator_Cape.png';
+            options.slim = slim;
+            
+            skinRender.render(options, () => {
+                const toggleParts = $(".partToggle");
+
+                for(ind = 0; ind < toggleParts.length; ind++){
+                    var togglePart = toggleParts[ind];
+                    // console.log("Toggle Parts: ",$(togglePart).attr("id"));
+                    // console.log("Toggle Status: ", $(togglePart).is(":checked"));
+                    // console.log("Model Info: ", skinRender.getModelByName($(togglePart).attr("id")));
+                    skinRender.getModelByName($(togglePart).attr("id")).visible = $(togglePart).is(":checked");
+                }
+            });
+        });
+
+        $(".partToggle").on("change", function () {
+            console.log("Toggling Part: ", $(this).attr("id"));
+            skinRender.getModelByName($(this).attr("id")).visible = $(this).is(":checked");
+            console.log("Model Info: ", skinRender.getModelByName($(this).attr("id")));
+        });
+
+        var animate = true;
+        $("#animate").on("change", function () {
+            animate = $(this).is(":checked");
+        });
+
+        var startTime = Date.now();
+        elemItem.addEventListener("skinRender", function (e) {
+            if (animate) {
+                var t = (Date.now() - startTime) / 1000;
+                e.detail.playerModel.children[2].rotation.x = Math.sin(t * 5) / 2;
+                e.detail.playerModel.children[3].rotation.x = -Math.sin(t * 5) / 2;
+                e.detail.playerModel.children[4].rotation.x = Math.sin(t * 5) / 2;
+                e.detail.playerModel.children[5].rotation.x = -Math.sin(t * 5) / 2;
+            }
+        })
+    }
+
+    const skinItem1 = document.getElementById("skin-item-1");
+    const skinItem2 = document.getElementById("skin-item-2");
+    const skinItem3 = document.getElementById("skin-item-3");
+
+    // const pageSection5 = document.getElementsByClassName("page-5-section")[0];
+
+    renderSkin(skinItem1, 'https://leworldafter.github.io/img/player-img/steve-img/skins-img/Steve_Original_Skin.png');
+    renderSkin(skinItem2, 'https://leworldafter.github.io/img/player-img/steve-img/skins-img/Jerin_Original.png');
+    renderSkin(skinItem3, 'https://leworldafter.github.io/img/player-img/steve-img/skins-img/Herobrine_Skin.png');
+    
+</script>
+
+<!-- Background Script -->
+<script>
+    function changeBackgroundWithHover(elemItem, imgUrl){
+        if(!elemItem){
+            return;
+        }
+
+        // imgUrl = "page.extra." + buildType + "_img_" + imgNo;
+
+        elemItem.addEventListener('mouseenter', () => {
+            pageSection3.style.backgroundImage = imgUrl;
+            console.log("Hello");
+        });
+
+        elemItem.addEventListener('mouseleave', () => {
+            pageSection3.style.backgroundImage = "url('https://leworldafter.github.io/img/Builds_Page_cover.webp')";
+            console.log("Exit");
+        });
+    }
+
+    const baseItem1 = document.getElementById("base-item-1");
+    const baseItem2 = document.getElementById("base-item-2");
+    const baseItem3 = document.getElementById("base-item-3");
+
+    const shopItem1 = document.getElementById("shop-item-1");
+    const shopItem2 = document.getElementById("shop-item-2");
+    const shopItem3 = document.getElementById("shop-item-3");
+
+    const pageSection3 = document.getElementsByClassName("page-3-section")[0];
+
+    changeBackgroundWithHover(baseItem1, "url('https://leworldafter.github.io/img/player-img/steve-img/bases-img/Steve_Castle_Base.webp')");
+
+    changeBackgroundWithHover(shopItem1, "url('https://leworldafter.github.io/img/player-img/steve-img/shops-img/Steve_Wheat_Shop.webp')");
+</script>
+
+<!-- Download Script -->
+<script>
+    var downloadBtn = document.getElementById("downloadBtn");
+    var skinCarouselInner = document.getElementById("skinCarouselInner");
+
+    downloadBtn.addEventListener("click", () => {
+        let skinElem = skinCarouselInner.getElementsByClassName("active")[0].getElementsByClassName("skin-item")[0];
+        let skinId = skinElem.id;
+
+        let imgUrl = null;
+
+        if(skinId == "skin-item-1"){
+            imgUrl = 'https://leworldafter.github.io/img/player-img/steve-img/skins-img/Steve_Original_Skin.png';
+        }
+        else if(skinId == "skin-item-2"){
+            imgUrl = 'https://leworldafter.github.io/img/player-img/steve-img/skins-img/Jerin_Original.png';
+        }
+        else if(skinId == "skin-item-3"){
+            imgUrl = 'https://leworldafter.github.io/img/player-img/steve-img/skins-img/Herobrine_Skin.png';
+        }
+        
+        if(imgUrl != null){
+            let fileName = getFileName(imgUrl);
+
+            // console.log("Skin Element: ", skinElem);
+            // console.log("Skin Id: ", skinId);
+            // console.log("Image URL: ", imgUrl);
+            // console.log("File Name: ", fileName);
+
+            saveAs(imgUrl, fileName);
+        }
+        
+    });
+</script>
+
+<!-- Advancements Script -->
+<script id="advancementScript" 
+    src=https://leworldafter.github.io/js/advancements.js 
+    type="module"
+    netherJsonParam=https://leworldafter.github.io/../json/advancements-json/Steve/Steve_Advancements_Nether.json 
+    adventureJsonParam=https://leworldafter.github.io/json/advancements-json/Steve/Steve_Advancements_Adventure.json
+    theEndJsonParam=https://leworldafter.github.io/../json/advancements-json/Steve/Steve_Advancements_The_End.json
+    husbandryJsonParam=https://leworldafter.github.io/../json/advancements-json/Steve/Steve_Advancements_Husbandry.json
+    minecraftJsonParam=https://leworldafter.github.io/../json/advancements-json/Steve/Steve_Advancements_Minecraft.json
+>
+</script>
+<script src=https://leworldafter.github.io/js/player.js></script>
+<script src=https://leworldafter.github.io/js/FileSaver.js></script>
+
+
+  <!-- End of Script Section -->
+
+</body>
+
+<footer>
+  <i class="bi bi-github">
+    <a href="https://github.com/LeWorldAfter/LeWorldAfter.github.io"></a>
+  </i>
+</footer>
+
+</html>

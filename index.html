@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="darkreader-lock">
+  <meta name="description" content="Welcome to Le World After">
+  <meta name="author" content="LWA group">
+  <link rel="stylesheet" href=https://leworldafter.github.io/home.css>
+  <link rel="stylesheet" href=https://leworldafter.github.io/loader.css>
+  <link rel="stylesheet" href=https://leworldafter.github.io/piemenu.css>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@4.3.4/css/bootstrap5-toggle.min.css">
+
+
+  <title>Welcome to Le World After</title>
+
+  <meta property="og:title"  content="Welcome to Le World After">
+  <meta name="twitter:title" content="Welcome to Le World After">
+  <meta name="description"         content="Le World After Home Page">
+  <meta property="og:description"  content="Le World After Home Page">
+  <meta name="twitter:description" content="Le World After Home Page">
+  <meta property="og:image"  content="https://leworldafter.github.io/img/Builds_Page_cover.webp">
+  <meta name="twitter:image" content="https://leworldafter.github.io/img/Builds_Page_cover.webp">
+  <meta name="twitter:card"  content="https://leworldafter.github.io/img/Builds_Page_cover.webp">
+  <meta property="og:type" content="website">
+  <meta property="twitter:domain" content="leworldafter.github.io">
+  <meta property="og:url" content="https:&#x2F;&#x2F;leworldafter.github.io">
+  <meta property="twitter:url" content="https:&#x2F;&#x2F;leworldafter.github.io">
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="resource/wheelnav-js/raphael.min.js"></script>
+  <script type="text/javascript" src="resource/wheelnav-js/raphael.icons.min.js"></script>
+  <script type="text/javascript" src="resource/wheelnav-js/wheelnav.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@4.3.4/js/bootstrap5-toggle.min.js"></script>
+
+  <!-- TODO refactor this to it's own script and then to resource folder-->
+  <script type="text/javascript">
+
+    var piemenu; //main object
+    ///Pie Menu Titles///
+    const pieTitles = ["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"];
+    ///Pie Menu Icons///
+    const pieIcons = ["imgsrc:../resource/home_icons/players_icon.svg",
+      "imgsrc:../resource/home_icons/coin_icon.svg",
+      "imgsrc:../resource/home_icons/crown_icon.svg",
+      "imgsrc:../resource/home_icons/globe_icon.svg",
+      "imgsrc:../resource/home_icons/book_icon.svg",
+      "imgsrc:../resource/home_icons/calendar_icon.svg"];
+    ///Pie Menu Links///
+    const pieLinks = ["https://leworldafter.github.io/players/",
+      "#",
+      "https://leworldafter.github.io/entertainment/",
+      "https://leworldafter.github.io/map/",
+      "#",
+      "#"];
+    ///Pie Menu Tooltips///  same as titles, change if needed
+    const pieTooltips = pieTitles; // ["Players", "Shopping", "Entertainment", "World Map", "Rules", "Events"];
+
+    function initPie(isText) {
+      //pie wheel settings
+      piemenu = new wheelnav('piemenu');
+      piemenu.spreaderInTitle = icon.plus;
+      piemenu.spreaderOutTitle = icon.cross;
+      piemenu.spreaderRadius = piemenu.wheelRadius * 0.13;
+      piemenu.wheelRadius = piemenu.wheelRadius * 0.83;
+      piemenu.animatetime = 250;
+      piemenu.animateeffect = 'back-out';
+      piemenu.selectedNavItemIndex = null;
+      piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
+      piemenu.initPercent = 0.1;
+      //pie navItems settings
+      if (isText == true) {
+        piemenu.initWheel(pieTitles); /*init with titles*/
+      }
+      else {
+        piemenu.initWheel(pieIcons); /*init with icons*/
+      }
+      //adds links and tooltips to the wheel
+      for (i = 0; i < 6; i++) {
+        piemenu.navItems[i].navigateHref = pieLinks[i];
+        piemenu.navItems[i].tooltip = pieTooltips[i];
+      }
+    }
+
+    //when the document is loaded init the wheel and toggle
+    $(document).ready(function () {
+      initPie(true); // init the navwheel
+      //createWheel() is called later
+      togglebtnInit(); //init the toggle button with data
+    });
+
+    $(window).on("load", async function () {
+      $("#loader-wrapper").fadeOut("slow");  //fade out loader
+      $("#logo_wrapper").load(window.location.href+" #logo_wrapper"); //reload logo for animation
+      await new Promise(r => setTimeout(r, 1000)); //wait 1000ms
+      piemenu.createWheel(); //creates the wheel
+      $("#loader-wrapper").remove(); //remove the loader div
+    });
+
+    //listen to toggle button
+    $(function () {
+      $("#wl-tggl").change(function () {
+        var isText = $(this).prop('checked');
+        //disables the toggle button
+        $("#wl-tggl").bootstrapToggle('readonly');
+        //switches the icons
+        initPie(isText);
+        piemenu.createWheel();
+        //enables the toggle button
+        $("#wl-tggl").bootstrapToggle('enable');
+
+      })
+    });
+
+    //helper function to init bootstrap toggle
+    function togglebtnInit() {
+      $("#wl-tggl").bootstrapToggle({
+        on: 'Icon',
+        off: 'Text',
+        size: 'small',
+        onstyle: 'outline-info',
+        offstyle: 'outline-warning',
+        style: 'wl-tggl'
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="loader-wrapper">
+    
+<link rel="stylesheet" href="https://leworldafter.github.io/loader.css">
+<div id=loader-container>
+    <div id=loader-orbit>
+        <div id=loader-l1>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l2>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l3>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l4>
+            <div class=inner></div>
+        </div>
+        <div id=loader-l5>
+            <div class=inner></div>
+        </div>
+    </div>
+    <div id=loader-center>
+        <div class=inner></div>
+    </div>
+</div>
+
+  </div>
+
+  <div id="particles-js"></div>
+  <div id="logo_wrapper"><img src="resource/home_icons/lwa_logo_anim.gif" alt="LWA Logo" id="logo"></div>
+  <div id="wheelDiv"></div>
+  <div id='piemenu' data-wheelnav data-wheelnav-slicepath='PieSlice' data-wheelnav-spreader
+    data-wheelnav-spreaderpath='LineSpreader' data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
+    data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-titleheight='60' data-wheelnav-cssmode
+    data-wheelnav-init>
+
+    <div data-wheelnav-navitemimg='../resource/home_icons/players_icon.svg'><a href="https://leworldafter.github.io/
+        @/players/_index.md"></a></div>
+    <div data-wheelnav-navitemimg='../resource/home_icons/coin_icon.svg'></div>
+    <div data-wheelnav-navitemimg='../resource/home_icons/crown_icon.svg'></div>
+    <div data-wheelnav-navitemimg='../resource/home_icons/globe_icon.svg'><a href="https://leworldafter.github.io/
+      @/map/_index.md"></a></div>
+    <div data-wheelnav-navitemimg='../resource/home_icons/book_icon.svg'></div>
+    <div data-wheelnav-navitemimg='../resource/home_icons/calendar_icon.svg'></div>
+
+  </div>
+  <script src="resource/particles-js/particles.js"></script>
+  <script src="resource/particles-js/app.js"></script>
+
+  <div id="home_footer">
+    <input type="checkbox" id="wl-tggl" class="">
+    <a role="button" class="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer"
+      href="https://github.com/LeWorldAfter/LeWorldAfter.github.io"><i class="bi bi-github"></i></a>
+    <a role="button" class="btn btn-danger btn-sm" target="_blank" rel="noopener noreferrer"
+      href="https://www.youtube.com/user/SuperAditeya/videos"><i class="bi bi-youtube"></i></a>
+  </div>
+
+</body>

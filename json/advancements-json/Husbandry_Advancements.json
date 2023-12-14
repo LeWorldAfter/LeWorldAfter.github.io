@@ -1,0 +1,166 @@
+{
+    "id": "husbandry",
+    "title": "Husbandry",
+    "description": "The world is full of friends and food",
+    "type": "advancement",
+    "children": [
+        {
+            "id": "bee_our_guest",
+            "title": "Bee Our Guest",
+            "description": "Use a Campfire to collect Honey from a Beehive using a Bottle without aggravating the Bees",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "wax_on",
+                    "title": "Wax On",
+                    "description": "Apply Honeycomb to a Copper block!",
+                    "type": "advancement",
+                    "children": [
+                        {
+                            "id": "wax_off",
+                            "title": "Wax Off",
+                            "description": "Scrape Wax off of a Copper block!",
+                            "type": "advancement"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "the_parrots_and_the_bats",
+            "title": "The Parrots and the Bats",
+            "description": "Breed two animals together",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "two_by_two",
+                    "title": "Two by Two",
+                    "description": "Breed all the animals!",
+                    "type": "challenge",
+                    "capacity": 22
+                }
+            ]
+        },
+        {
+            "id": "youve_got_a_friend_in_me",
+            "title": "You've Got a Friend in Me",
+            "description": "Have an Allay deliver items to you",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "birthday_song",
+                    "title": "Birthday Song",
+                    "description": "Have an Allay drop a Cake at a Note Block",
+                    "type": "challenge"
+                }
+            ]
+        },
+        {
+            "id": "whatever_floats_your_goat",
+            "title": "Whatever Floats Your Goat!",
+            "description": "Get in a Boat and float with a Goat",
+            "type": "advancement"
+        },
+        {
+            "id": "best_friends_forever",
+            "title": "Best Friends Forever",
+            "description": "Tame an animal",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "a_complete_catalogue",
+                    "title": "A Complete Catalogue",
+                    "description": "Tame all Cat variants!",
+                    "type": "challenge",
+                    "capacity": 11
+                }
+            ]
+        },
+        {
+            "id": "glow_and_behold",
+            "title": "Glow and Behold!",
+            "description": "Make the text of a Sign glow",
+            "type": "advancement"
+        },
+        {
+            "id": "fishy_business",
+            "title": "Fishy Business",
+            "description": "Catch a fish",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "tactical_fishing",
+                    "title": "Tactical Fishing",
+                    "description": "Catch a Fish... without a Fishing Rod!",
+                    "type": "advancement",
+                    "children": [
+                        {
+                            "id": "the_cutest_predator",
+                            "title": "The Cutest Predator",
+                            "description": "Catch an Axolotl in a Bucket",
+                            "type": "advancement",
+                            "children": [
+                                {
+                                    "id": "the_healing_power_of_friendship",
+                                    "title": "The Healing Power of Friendship",
+                                    "description": "Team up with an Axolotl and win a fight",
+                                    "type": "advancement"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "total_beelocation",
+            "title": "Total Beelocation",
+            "description": "Move a Bee Nest, with 3 Bees inside, using Silk Touch",
+            "type": "advancement"
+        },
+        {
+            "id": "bukkit_bukkit",
+            "title": "Bukkit Bukkit",
+            "description": "Catch a Tadpole in a Bucket",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "when_the_squad_hops_into_town",
+                    "title": "When the Squad Hops into Town",
+                    "description": "Get each Frog variant on a Lead",
+                    "type": "advancement",
+                    "capacity": 3,
+                    "children": [
+                        {
+                            "id": "with_our_powers_combined",
+                            "title": "With Our Powers Combined!",
+                            "description": "Have all Froglights in your inventory",
+                            "type": "challenge"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "a_seedy_place",
+            "title": "A Seedy Place",
+            "description": "Plant a seed and watch it grow",
+            "type": "advancement",
+            "children": [
+                {
+                    "id": "a_balanced_diet",
+                    "title": "A Balanced Diet",
+                    "description": "Eat everything that is edible, even if it's not good for you",
+                    "type": "challenge",
+                    "capacity": 40
+                },
+                {
+                    "id": "serious_dedication",
+                    "title": "Serious Dedication",
+                    "description": "Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices",
+                    "type": "challenge"
+                }
+            ]
+        }
+    ]
+}
